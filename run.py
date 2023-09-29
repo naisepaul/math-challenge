@@ -1,3 +1,16 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import random  # making random choice
+import sys  # typewriter effect using sys module
+import time  # time
+
+
+def typewriter_effect(text, delay=0.05):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+
+    sys.stdout.write('\n')  # Add a newline character at the end
+
+
+welcome_text = "*" * 30 + "\n WELCOME TO MATH CHALLENGE \n\n" + "*" * 30
+typewriter_effect(welcome_text)
