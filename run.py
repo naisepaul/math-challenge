@@ -34,17 +34,11 @@ welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n" +
                    ' '*spaces_to_center + "*" * 25)
 
 print(f"""
-    {Fore.GREEN}{Back.RED}    
-    ╔╦╗┌─┐┌┬┐┬ ┬  ╔═╗┬ ┬┌─┐┬  ┬  ┌─┐┌┐┌┌─┐┌─┐
-    ║║║├─┤ │ ├─┤  ║  ├─┤├─┤│  │  ├┤ ││││ ┬├┤ 
-    ╩ ╩┴ ┴ ┴ ┴ ┴  ╚═╝┴ ┴┴ ┴┴─┘┴─┘└─┘┘└┘└─┘└─┘
-        """)
-"""  _   _   _   _         _   _   _   _   _   _   _   _   _ 
-    / \ / \ / \ / \       / \ / \ / \ / \ / \ / \ / \ / \ / \ 
-    ( M | a | t | h )     ( C | h | a | l | l | e | n | g | e )
-    \_/ \_/ \_/ \_/       \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ 
-    
-"""       
+    {Fore.CYAN}{Style.BRIGHT}{Back.MAGENTA}
+                        ╔╦╗┌─┐┌┬┐┬ ┬  ╔═╗┬ ┬┌─┐┬  ┬  ┌─┐┌┐┌┌─┐┌─┐
+                        ║║║├─┤ │ ├─┤  ║  ├─┤├─┤│  │  ├┤ ││││ ┬├┤ 
+                        ╩ ╩┴ ┴ ┴ ┴ ┴  ╚═╝┴ ┴┴ ┴┴─┘┴─┘└─┘┘└┘└─┘└─┘
+     """)     
 typewriter_effect(welcome_message, delay=0.02,
                   color=Fore.RED, bg_color=Back.WHITE)
 
