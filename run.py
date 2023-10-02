@@ -2,6 +2,7 @@ import random  # making random choice
 import shutil  # Import the shutil module to get the terminal width
 import sys  # typewriter effect using sys module
 import time  # time
+import datetime
 import colorama  # for color
 from colorama import Fore, Back, Style
 """
@@ -84,10 +85,10 @@ print(f""" {Fore.GREEN}
 OPERATORS = ["+", "-", "*"]  # operators
 """
 OPERATOR_COLORS is a dictionary mapping operators to 
-their respective ANSI escape codes for different colors.
+different colors.
 """
 OPERATOR_COLORS = {
-    "+": Fore.RED,  #  for red color
+    "+": Fore.RED,   #  for red color
     "-": Fore.GREEN,  # for green color
     "*": Fore.YELLOW   # for yellow color
 }
@@ -111,13 +112,23 @@ def generate_questions():
     Python expression.
     """
     return expr, answer
-
+ques_start_time = time.time()  # Record the start time from first question
 
 for i in range(total_questions):
-    expr, answer = generate_questions()
+    expr, answer = generate_questions()   
+    curr_ques_start_time = time.time()  # Record the start time from current question               
     while True:
+        
         guess = input(f"{Fore.CYAN}Question #{str(i+1)} : {expr} = ")
+        
         if guess == str(answer):  # answer will be an int. So chnaging to a string
+            current_time = time.time() # current time
+            curr_ques_end_time = current_time - curr_ques_start_time
+            print(f"{Fore.GREEN}Correct! You took {curr_ques_end_time:.2f} seconds to answer.")
             break
         else:
             print(f"{Fore.RED} Wrong Answer")   
+    time.sleep(.5)
+ques_end_time =  time.time()  # total question end time
+total_time = ques_end_time - ques_start_time  # Calculate elapsed time
+print(f"{total_time:.2f}")
