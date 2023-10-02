@@ -79,3 +79,18 @@ print(f""" {Fore.GREEN}
    |  |___________________________________________________________________|  |
    |_________________________________________________________________________|
     """)
+
+OPERATORS = ["+", "-", "*"]
+min_value = 3
+max_value = 15
+
+
+def generate_questions():
+    left = random.randint(min_value, max_value)
+    right = random.randint(min_value, max_value)
+    operator = random.choice(OPERATORS)
+    expr = str(left) + " " + operator + " " + str(right)
+    print(expr)
+
+
+generate_questions()
