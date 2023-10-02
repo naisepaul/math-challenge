@@ -79,8 +79,19 @@ print(f""" {Fore.GREEN}
    |  |___________________________________________________________________|  |
    |_________________________________________________________________________|
     """)
+   
 
 OPERATORS = ["+", "-", "*"]  # operators
+"""
+OPERATOR_COLORS is a dictionary mapping operators to 
+their respective ANSI escape codes for different colors.
+"""
+OPERATOR_COLORS = {
+    "+": "\033[91m",  # ANSI escape code for red color
+    "-": "\033[92m",  # ANSI escape code for green color
+    "*": "\033[93m"   # ANSI escape code for yellow color
+}
+
 min_value = 3  # minimum value
 max_value = 15  # maximum value
 total_questions = 10  # total questions to be answered 
@@ -91,8 +102,9 @@ def generate_questions():
     left = random.randint(min_value, max_value)
     right = random.randint(min_value, max_value)
     operator = random.choice(OPERATORS)  # randomly selected operators
-    expr = str(left) + " " + operator + " " + str(right)
-    answer = eval(expr)
+    # expr = f"{str(left)} {operator} {str(right)}"
+    expr = f"{left} {OPERATOR_COLORS[operator]}{operator} {Fore.MAGENTA}{right}"  # Apply color to the operator
+    answer = eval(f"{left} {operator} {right}")
     """
     eval() is a built-in function that is used to evaluate a string
     containing a Python expression or statement as code. It takes a
@@ -104,4 +116,5 @@ def generate_questions():
 
 for i in range(total_questions):
     expr, answer = generate_questions()
-    print(f"Question #{str(i+1)} : {expr} =  {answer}")
+    print(f"{Fore.CYAN}Question #{str(i+1)} : {Fore.MAGENTA}{expr} =  {answer}")
+    
