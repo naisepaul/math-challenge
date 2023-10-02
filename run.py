@@ -80,15 +80,17 @@ print(f""" {Fore.GREEN}
    |_________________________________________________________________________|
     """)
 
-OPERATORS = ["+", "-", "*"]
-min_value = 3
-max_value = 15
+OPERATORS = ["+", "-", "*"]  # operators
+min_value = 3  # minimum value
+max_value = 15  # maximum value
 
 
 def generate_questions():
+    # define 10 randomly selected questions
+    # randomly selected left side and right side value
     left = random.randint(min_value, max_value)
     right = random.randint(min_value, max_value)
-    operator = random.choice(OPERATORS)
+    operator = random.choice(OPERATORS)  # randomly selected operators
     expr = str(left) + " " + operator + " " + str(right)
     print(expr)
 
