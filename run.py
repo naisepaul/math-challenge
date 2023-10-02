@@ -32,8 +32,8 @@ terminal_width, _ = shutil.get_terminal_size()
 # Calculate the number of spaces needed to center horizontally
 spaces_to_center = (terminal_width - len("WELCOME TO MATH CHALLENGE")) // 2
 
-welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n" +
-                   ' '*spaces_to_center + "*" * 25)
+welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n"
+                   + ' '*spaces_to_center + "*" * 25)
 
 # Heading
 print(f"""
@@ -83,7 +83,7 @@ print(f""" {Fore.GREEN}
 OPERATORS = ["+", "-", "*"]  # operators
 min_value = 3  # minimum value
 max_value = 15  # maximum value
-
+total_questions = 10  # total questions to be answered 
 
 def generate_questions():
     # define 10 randomly selected questions
@@ -92,7 +92,16 @@ def generate_questions():
     right = random.randint(min_value, max_value)
     operator = random.choice(OPERATORS)  # randomly selected operators
     expr = str(left) + " " + operator + " " + str(right)
-    print(expr)
+    answer = eval(expr)
+    """
+    eval() is a built-in function that is used to evaluate a string
+    containing a Python expression or statement as code. It takes a
+    single argument, which is a string, and interprets it as a 
+    Python expression.
+    """
+    return expr, answer
 
 
-generate_questions()
+for i in range(total_questions):
+    expr, answer = generate_questions()
+    print(f"Question #{str(i+1)} : {expr} =  {answer}")
