@@ -102,7 +102,6 @@ def generate_questions():
     left = random.randint(min_value, max_value)
     right = random.randint(min_value, max_value)
     operator = random.choice(OPERATORS)  # randomly selected operators
-    # expr = f"{str(left)} {operator} {str(right)}"
     expr = f"{Fore.MAGENTA}{str(left)} {OPERATOR_COLORS[operator]}{operator} {Fore.MAGENTA}{str(right)}"  # Apply color to the operator
     answer = eval(f"{str(left)} {operator} {str(right)}")
     """
@@ -116,5 +115,9 @@ def generate_questions():
 
 for i in range(total_questions):
     expr, answer = generate_questions()
-    print(f"{Fore.CYAN}Question #{str(i+1)} : {expr} =  {answer}")
-    
+    while True:
+        guess = input(f"{Fore.CYAN}Question #{str(i+1)} : {expr} = ")
+        if guess == str(answer):  # answer will be an int. So chnaging to a string
+            break
+        else:
+            print(f"{Fore.RED} Wrong Answer")    
