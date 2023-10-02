@@ -10,6 +10,8 @@ https://www.youtube.com/watch?v=u51Zjlnui4Y
 """
 colorama.init(autoreset=True)  # for auto reset color
 
+# For typewritter effect
+
 
 def typewriter_effect(text, delay=0.2, color=Fore.WHITE, bg_color=Back.BLACK):
     """
@@ -33,12 +35,16 @@ spaces_to_center = (terminal_width - len("WELCOME TO MATH CHALLENGE")) // 2
 welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n" +
                    ' '*spaces_to_center + "*" * 25)
 
+# Heading
 print(f"""
-    {Fore.CYAN}{Style.BRIGHT}{Back.MAGENTA}
+     {Fore.CYAN}{Style.BRIGHT}{Back.MAGENTA}
                         ╔╦╗┌─┐┌┬┐┬ ┬  ╔═╗┬ ┬┌─┐┬  ┬  ┌─┐┌┐┌┌─┐┌─┐
                         ║║║├─┤ │ ├─┤  ║  ├─┤├─┤│  │  ├┤ ││││ ┬├┤ 
                         ╩ ╩┴ ┴ ┴ ┴ ┴  ╚═╝┴ ┴┴ ┴┴─┘┴─┘└─┘┘└┘└─┘└─┘
-     """)     
+                        """)
+
+# calling typewriter function to print the welcome message
+
 typewriter_effect(welcome_message, delay=0.02,
                   color=Fore.RED, bg_color=Back.WHITE)
 
