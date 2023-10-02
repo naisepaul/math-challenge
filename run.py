@@ -120,4 +120,4 @@ for i in range(total_questions):
         if guess == str(answer):  # answer will be an int. So chnaging to a string
             break
         else:
-            print(f"{Fore.RED} Wrong Answer")    
+            print(f"{Fore.RED} Wrong Answer")   
