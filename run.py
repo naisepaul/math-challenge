@@ -3,6 +3,7 @@ import shutil  # Import the shutil module to get the terminal width
 import sys  # typewriter effect using sys module
 import time  # time
 import datetime
+from playsound import playsound  # the playsound library
 import colorama  # for color
 from colorama import Fore, Back, Style
 """
@@ -80,22 +81,23 @@ print(f""" {Fore.GREEN}
    |  |___________________________________________________________________|  |
    |_________________________________________________________________________|
     """)
-   
+
 
 OPERATORS = ["+", "-", "*"]  # operators
 """
-OPERATOR_COLORS is a dictionary mapping operators to 
+OPERATOR_COLORS is a dictionary mapping operators to
 different colors.
 """
 OPERATOR_COLORS = {
-    "+": Fore.RED,   #  for red color
+    "+": Fore.RED,   # for red color
     "-": Fore.GREEN,  # for green color
     "*": Fore.YELLOW   # for yellow color
 }
 
 min_value = 3  # minimum value
 max_value = 15  # maximum value
-total_questions = 10  # total questions to be answered 
+total_questions = 10  # total questions to be answered
+
 
 def generate_questions():
     # define 10 randomly selected questions
@@ -103,32 +105,46 @@ def generate_questions():
     left = random.randint(min_value, max_value)
     right = random.randint(min_value, max_value)
     operator = random.choice(OPERATORS)  # randomly selected operators
-    expr = f"{Fore.MAGENTA}{str(left)} {OPERATOR_COLORS[operator]}{operator} {Fore.MAGENTA}{str(right)}"  # Apply color to the operator
+    # Apply color to the operator, right and left values
+    expr = (
+        f"{Fore.MAGENTA}{str(left)} " 
+        f"{OPERATOR_COLORS[operator]}{operator} "
+        f"{Fore.MAGENTA}{str(right)}"
+    )
+
     answer = eval(f"{str(left)} {operator} {str(right)}")
     """
     eval() is a built-in function that is used to evaluate a string
     containing a Python expression or statement as code. It takes a
-    single argument, which is a string, and interprets it as a 
+    single argument, which is a string, and interprets it as a
     Python expression.
     """
     return expr, answer
+
+
 ques_start_time = time.time()  # Record the start time from first question
 
 for i in range(total_questions):
-    expr, answer = generate_questions()   
-    curr_ques_start_time = time.time()  # Record the start time from current question               
+    expr, answer = generate_questions()
+    # Record the start time of current question
+    curr_ques_start_time = time.time()
+
     while True:
-        
         guess = input(f"{Fore.CYAN}Question #{str(i+1)} : {expr} = ")
-        
-        if guess == str(answer):  # answer will be an int. So chnaging to a string
-            current_time = time.time() # current time
+        # answer will be an int. So chnaging to a string
+        if guess == str(answer):
+            current_time = time.time()  # current time
             curr_ques_end_time = current_time - curr_ques_start_time
-            print(f"{Fore.GREEN}Correct! You took {curr_ques_end_time:.2f} seconds to answer.")
+            print(f"""{Fore.GREEN}Correct! You took\
+                   {curr_ques_end_time:.2f} seconds to answer.""")
+            playsound("../sound/correct_answer.mp3")
             break
         else:
-            print(f"{Fore.RED} Wrong Answer")   
+            print(f"{Fore.RED} Wrong Answer")
+            playsound("/MATH-CHALLENGE/sound/wrong_answer.mp3")
+    # Pause before the next question
     time.sleep(.5)
-ques_end_time =  time.time()  # total question end time
+
+ques_end_time = time.time()  # total question end time
 total_time = ques_end_time - ques_start_time  # Calculate elapsed time
 print(f"{total_time:.2f}")
