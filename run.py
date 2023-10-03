@@ -122,6 +122,17 @@ def generate_questions():
     return expr, answer
 
 
+while True:
+    username = input(f"\n{Fore.YELLOW}Enter your"
+                     f" username :\n>>> ").strip().upper()
+
+    if len(username) < 3:
+        print(f"{Fore.RED}This is not a valid username, atleast 3 letters !")
+        continue
+    else:
+        print(f"Hello, {username}, Welcome to Math Challenge !")
+        break
+
 # Record the start time for first question
 ques_start_time = time.time()
 
@@ -132,6 +143,7 @@ for i in range(total_questions):
 
     while True:
         guess = input(f"{Fore.CYAN}Question #{str(i+1)} : {expr} = ")
+
         # answer will be an int. So chnaging to a string
         if guess == str(answer):
             current_time = time.time()  # current time
