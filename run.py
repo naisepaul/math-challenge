@@ -107,7 +107,7 @@ def generate_questions():
     operator = random.choice(OPERATORS)  # randomly selected operators
     # Apply color to the operator, right and left values
     expr = (
-        f"{Fore.MAGENTA}{str(left)} " 
+        f"{Fore.MAGENTA}{str(left)} "
         f"{OPERATOR_COLORS[operator]}{operator} "
         f"{Fore.MAGENTA}{str(right)}"
     )
@@ -122,7 +122,8 @@ def generate_questions():
     return expr, answer
 
 
-ques_start_time = time.time()  # Record the start time from first question
+# Record the start time for first question
+ques_start_time = time.time()
 
 for i in range(total_questions):
     expr, answer = generate_questions()
@@ -135,13 +136,13 @@ for i in range(total_questions):
         if guess == str(answer):
             current_time = time.time()  # current time
             curr_ques_end_time = current_time - curr_ques_start_time
-            print(f"""{Fore.GREEN}Correct! You took\
-                   {curr_ques_end_time:.2f} seconds to answer.""")
-            playsound("../sound/correct_answer.mp3")
+            print(f"{Fore.GREEN}Correct! You took "
+                  f"{curr_ques_end_time:.2f} seconds to answer.")
+            # playsound("/workspaces/math-challenge/correct_sound.wav")
             break
         else:
             print(f"{Fore.RED} Wrong Answer")
-            playsound("/MATH-CHALLENGE/sound/wrong_answer.mp3")
+            # playsound("../sound/wrong_answer.mp3")
     # Pause before the next question
     time.sleep(.5)
 
