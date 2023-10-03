@@ -162,7 +162,11 @@ def main():
 
     ques_end_time = time.time()  # total question end time
     total_time = ques_end_time - ques_start_time  # Calculate elapsed time
-    print(f"{total_time:.2f}")
+    print("\nGame Over!")
+    print(f"You answered in {total_time:.2f} Seconds.")
+    play_again = input("Do you want to play again? (yes/no): ")
+    if (play_again.lower()) != 'yes':        
+        print("Thank you for playing Math Challenge!")
 
 
 if __name__ == "__main__":
