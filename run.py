@@ -122,42 +122,48 @@ def generate_questions():
     return expr, answer
 
 
-while True:
-    username = input(f"\n{Fore.YELLOW}Enter your"
-                     f" username :\n>>> ").strip().upper()
-
-    if len(username) < 3:
-        print(f"{Fore.RED}This is not a valid username, atleast 3 letters !")
-        continue
-    else:
-        print(f"Hello, {username}, Welcome to Math Challenge !")
-        break
-
-# Record the start time for first question
-ques_start_time = time.time()
-
-for i in range(total_questions):
-    expr, answer = generate_questions()
-    # Record the start time of current question
-    curr_ques_start_time = time.time()
-
+def main():
     while True:
-        guess = input(f"{Fore.CYAN}Question #{str(i+1)} : {expr} = ")
+        username = input(f"\n{Fore.YELLOW}Enter your"
+                         f" username :\n>>> ").strip().upper()
 
-        # answer will be an int. So chnaging to a string
-        if guess == str(answer):
-            current_time = time.time()  # current time
-            curr_ques_end_time = current_time - curr_ques_start_time
-            print(f"{Fore.GREEN}Correct! You took "
-                  f"{curr_ques_end_time:.2f} seconds to answer.")
-            # playsound("/workspaces/math-challenge/correct_sound.wav")
-            break
+        if len(username) < 3:
+            print(f"{Fore.RED}This is not a valid username,"
+                  f" atleast 3 letters!")
+            continue
         else:
-            print(f"{Fore.RED} Wrong Answer")
-            # playsound("../sound/wrong_answer.mp3")
-    # Pause before the next question
-    time.sleep(.5)
+            print(f"Hello, {username}, Welcome to Math Challenge !")
+            break
 
-ques_end_time = time.time()  # total question end time
-total_time = ques_end_time - ques_start_time  # Calculate elapsed time
-print(f"{total_time:.2f}")
+    # Record the start time for first question
+    ques_start_time = time.time()
+
+    for i in range(total_questions):
+        expr, answer = generate_questions()
+        # Record the start time of current question
+        curr_ques_start_time = time.time()
+
+        while True:
+            guess = input(f"{Fore.CYAN}Question #{str(i+1)} : {expr} = ")
+
+            # answer will be an int. So chnaging to a string
+            if guess == str(answer):
+                current_time = time.time()  # current time
+                curr_ques_end_time = current_time - curr_ques_start_time
+                print(f"{Fore.GREEN}Correct! You took "
+                      f"{curr_ques_end_time:.2f} seconds to answer.")
+                # playsound("/workspaces/math-challenge/correct_sound.wav")
+                break
+            else:
+                print(f"{Fore.RED} Wrong Answer")
+                # playsound("../sound/wrong_answer.mp3")
+        # Pause before the next question
+        time.sleep(.5)
+
+    ques_end_time = time.time()  # total question end time
+    total_time = ques_end_time - ques_start_time  # Calculate elapsed time
+    print(f"{total_time:.2f}")
+
+
+if __name__ == "__main__":
+    main()
