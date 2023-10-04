@@ -3,17 +3,18 @@ import shutil  # Import the shutil module to get the terminal width
 import sys  # typewriter effect using sys module
 import time  # time
 import datetime
+from game_details import *
+
 from playsound import playsound  # the playsound library
 import colorama  # for color
 from colorama import Fore, Back, Style
 """
-color, background, style
+color, background color, style
 https://www.youtube.com/watch?v=u51Zjlnui4Y
 """
 colorama.init(autoreset=True)  # for auto reset color
 
 # For typewritter effect
-
 
 def typewriter_effect(text, delay=0.2, color=Fore.WHITE, bg_color=Back.BLACK):
     """
@@ -49,38 +50,6 @@ print(f"""
 
 typewriter_effect(welcome_message, delay=0.02,
                   color=Fore.RED, bg_color=Back.WHITE)
-
-print(f""" {Fore.GREEN}
-
-    _________________________________________________________________________
-   |   ___________________________________________________________________   |
-   |  |                                                                   |  |
-   |  |                ===============================                    |  |
-   |  |                | |                         | |                    |  |
-   |  |                | |   G A M E   R U L E S   | |                    |  |
-   |  |                | |                         | |                    |  |
-   |  |                ===============================                    |  |
-   |  |                                                                   |  |
-   |  |  1 - Its a simple maths challenge game.                           |  |
-   |  |                                                                   |  |
-   |  |  2 - Randomly generate 10 math questions, each involving          |  |
-   |  |      multiplication, addition, or subtraction, with numbers       |  |
-   |  |      ranging between 3 and 15. Here's an example of how to        |  |
-   |  |      generate questions:                                          |  |
-   |  |                                                                   |  |
-   |  |         Question 1: Multiply 6 by 9                               |  |
-   |  |         Question 2: Add 11 to 4                                   |  |
-   |  |         Question 3: Subtract 8 from 15                            |  |
-   |  |         ...and so on.                                             |  |
-   |  |                                                                   |  |
-   |  |  3 - Players must solve each math question as quickly as          |  |
-   |  |      possible. There is no specific time limit for individual     |  |
-   |  |      questions                                                    |  |
-   |  |                                                                   |  |
-   |  |  4 - The top 10 fastest times will be saved on a leaderboard.     |  |
-   |  |___________________________________________________________________|  |
-   |_________________________________________________________________________|
-    """)
 
 
 OPERATORS = ["+", "-", "*"]  # operators
@@ -132,9 +101,11 @@ def main():
                   f" atleast 3 letters!")
             continue
         else:
-            print(f"Hello, {username}, Welcome to Math Challenge !")
+            print(f"Hello, {username}, Welcome to Math Challenge !\n")
             break
-
+    print(f"{Fore.GREEN}{game_details[0]}")
+    input(f"""\n{Fore.YELLOW}
+    {username}, PRESS ENTER TO START THE GAME.\n    >>> \n""")
     # Record the start time for first question
     ques_start_time = time.time()
 
@@ -165,7 +136,7 @@ def main():
     print("\nGame Over!")
     print(f"You answered in {total_time:.2f} Seconds.")
     play_again = input("Do you want to play again? (yes/no): ")
-    if (play_again.lower()) != 'yes':        
+    if (play_again.lower()) != 'yes':
         print("Thank you for playing Math Challenge!")
 
 
