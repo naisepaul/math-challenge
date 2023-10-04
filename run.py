@@ -3,7 +3,7 @@ import shutil  # Import the shutil module to get the terminal width
 import sys  # typewriter effect using sys module
 import time  # time
 import datetime
-from game_details import *
+from game_details import *  # import game_details file
 
 from playsound import playsound  # the playsound library
 import colorama  # for color
@@ -40,12 +40,9 @@ welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n"
 
 # Heading
 print(f"""
-     {Fore.CYAN}{Style.BRIGHT}{Back.MAGENTA}
-                        ╔╦╗┌─┐┌┬┐┬ ┬  ╔═╗┬ ┬┌─┐┬  ┬  ┌─┐┌┐┌┌─┐┌─┐
-                        ║║║├─┤ │ ├─┤  ║  ├─┤├─┤│  │  ├┤ ││││ ┬├┤ 
-                        ╩ ╩┴ ┴ ┴ ┴ ┴  ╚═╝┴ ┴┴ ┴┴─┘┴─┘└─┘┘└┘└─┘└─┘
-                        """)
-
+      {Fore.CYAN}{Style.BRIGHT}{Back.MAGENTA}
+      {game_details[1]}""")            
+                       
 # calling typewriter function to print the welcome message
 
 typewriter_effect(welcome_message, delay=0.02,
@@ -93,8 +90,8 @@ def generate_questions():
 
 def main():
     while True:
-        username = input(f"\n{Fore.YELLOW}Enter your"
-                         f" username :\n>>> ").strip().upper()
+        username = input(f"""\n{Fore.YELLOW}
+        Enter your username :\n        >>>""").strip().upper()
 
         if len(username) < 3:
             print(f"{Fore.RED}This is not a valid username,"
@@ -105,7 +102,7 @@ def main():
             break
     print(f"{Fore.GREEN}{game_details[0]}")
     input(f"""\n{Fore.YELLOW}
-    {username}, PRESS ENTER TO START THE GAME.\n    >>> \n""")
+    {username}, Press ENTER to start the game.\n    >>>""")
     # Record the start time for first question
     ques_start_time = time.time()
 
@@ -115,18 +112,19 @@ def main():
         curr_ques_start_time = time.time()
 
         while True:
-            guess = input(f"{Fore.CYAN}Question #{str(i+1)} : {expr} = ")
+            guess = input(f"""{Fore.CYAN}
+         Question #{str(i+1)} : {expr} = """)
 
-            # answer will be an int. So chnaging to a string
+            # answer will be an int. So changing to a string
             if guess == str(answer):
                 current_time = time.time()  # current time
                 curr_ques_end_time = current_time - curr_ques_start_time
-                print(f"{Fore.GREEN}Correct! You took "
-                      f"{curr_ques_end_time:.2f} seconds to answer.")
+                print(f"""{Fore.GREEN}
+         Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
                 # playsound("/workspaces/math-challenge/correct_sound.wav")
                 break
             else:
-                print(f"{Fore.RED} Wrong Answer")
+                print(f"{Fore.RED}\n\t Wrong Answer")
                 # playsound("../sound/wrong_answer.mp3")
         # Pause before the next question
         time.sleep(.5)
