@@ -16,6 +16,7 @@ colorama.init(autoreset=True)  # for auto reset color
 
 # For typewritter effect
 
+
 def typewriter_effect(text, delay=0.2, color=Fore.WHITE, bg_color=Back.BLACK):
     """
     Welcome message in typewriter effect
@@ -39,10 +40,8 @@ welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n"
                    + ' '*spaces_to_center + "*" * 25)
 
 # Heading
-print(f"""
-      {Fore.CYAN}{Style.BRIGHT}{Back.MAGENTA}
-      {game_details[1]}""")            
-                       
+print(f"{Fore.CYAN}{Style.BRIGHT} {Back.MAGENTA}{game_details[1]}")
+
 # calling typewriter function to print the welcome message
 
 typewriter_effect(welcome_message, delay=0.02,
@@ -88,18 +87,29 @@ def generate_questions():
     return expr, answer
 
 
-def main():
+def get_username():
+    # getting username
     while True:
-        username = input(f"""\n{Fore.YELLOW}
-        Enter your username :\n        >>>""").strip().upper()
 
-        if len(username) < 3:
-            print(f"{Fore.RED}This is not a valid username,"
-                  f" atleast 3 letters!")
-            continue
+        username = input(f"""\n{Fore.YELLOW}
+        Enter your username : \n        >>>""").strip().upper()
+
+        if len(username) < 3 or ' ' in username or \
+           not any(char.isalpha() for char in username):
+            """
+            Check if the username has less than 3 characters
+            or does not contain any letters or contain space
+            """
+            print(f"""{Fore.RED}\tInvalid username. Please enter
+             at least 3 characters with at least one letter without space!""")
+
         else:
-            print(f"Hello, {username}, Welcome to Math Challenge !\n")
-            break
+            print(f"\tHello, {username}, Welcome to Math Challenge !\n")
+            return username
+
+
+def main():
+    username = get_username()
     print(f"{Fore.GREEN}{game_details[0]}")
     input(f"""\n{Fore.YELLOW}
     {username}, Press ENTER to start the game.\n    >>>""")
