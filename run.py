@@ -99,8 +99,8 @@ def get_username():
             Check if the username has less than 3 characters
             or does not contain any letters or contain space
             """
-            print(f"""{Fore.RED}\tInvalid username. Please enter
-             at least 3 characters with at least one letter without space!""")
+            print(f"""{Fore.RED}\tInvalid username. Please enter at least 3 
+            characters with at least one letter without space!""")
 
         else:
             print(f"\tHello, {username}, Welcome to Math Challenge !\n")
@@ -123,6 +123,15 @@ def main():
         while True:
             guess = input(f"""{Fore.CYAN}
          Question #{str(i+1)} : {expr} = """)
+            if guess.lower() == 'exit':
+                print(f"{Fore.RED}\t Exiting the game...")
+                return
+
+            try:
+                guess = int(guess)
+            except ValueError:
+                print(f"{Fore.RED}\t Invalid input. Please enter an integer.")
+                continue
 
             # answer will be an int. So changing to a string
             if guess == str(answer):
@@ -133,7 +142,6 @@ def main():
                 break
             else:
                 print(f"{Fore.RED}\n\t Wrong Answer")
-                
         # Pause before the next question
         time.sleep(.5)
 
