@@ -5,7 +5,6 @@ import time  # time
 import datetime
 from game_details import *  # import game_details file
 
-from playsound import playsound  # the playsound library
 import colorama  # for color
 from colorama import Fore, Back, Style
 """
@@ -88,7 +87,7 @@ def generate_questions():
 
 
 def get_username():
-    # getting username
+    # getting username and check it has the correct format
     while True:
 
         username = input(f"""\n{Fore.YELLOW}
@@ -131,18 +130,17 @@ def main():
                 curr_ques_end_time = current_time - curr_ques_start_time
                 print(f"""{Fore.GREEN}
          Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
-                # playsound("/workspaces/math-challenge/correct_sound.wav")
                 break
             else:
                 print(f"{Fore.RED}\n\t Wrong Answer")
-                # playsound("../sound/wrong_answer.mp3")
+                
         # Pause before the next question
         time.sleep(.5)
 
     ques_end_time = time.time()  # total question end time
     total_time = ques_end_time - ques_start_time  # Calculate elapsed time
-    print("\nGame Over!")
-    print(f"You answered in {total_time:.2f} Seconds.")
+    print("\n\tGame Over!")
+    print(f"\tYou answered in {total_time:.2f} Seconds.")
     play_again = input("Do you want to play again? (yes/no): ")
     if (play_again.lower()) != 'yes':
         print("Thank you for playing Math Challenge!")
