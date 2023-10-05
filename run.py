@@ -124,8 +124,17 @@ def main():
         while True:
             guess = input(f"""{Fore.CYAN}
          Question #{str(i+1)} : {expr} = """)
-            # if want to exit from in between type exit
-            if guess.lower() == 'exit':
+            
+            # answer will be an int. So changing to a string
+            if guess == str(answer):
+                current_time = time.time()  # current time
+                curr_ques_end_time = current_time - curr_ques_start_time
+                print(f"""{Fore.GREEN}
+         Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
+                break           
+            
+             # if want to exit from in between type exit
+            elif guess.lower() == 'exit':
                 print(f"{Fore.RED}\t Exiting the game...")
                 return
 
@@ -135,14 +144,6 @@ def main():
             except ValueError:
                 print(f"{Fore.RED}\t Invalid input. Please enter an integer.")
                 continue
-
-            # answer will be an int. So changing to a string
-            if guess == str(answer):
-                current_time = time.time()  # current time
-                curr_ques_end_time = current_time - curr_ques_start_time
-                print(f"""{Fore.GREEN}
-         Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
-                break
             else:
                 print(f"{Fore.RED}\n\t Wrong Answer")
         # Pause before the next question
@@ -152,9 +153,23 @@ def main():
     total_time = ques_end_time - ques_start_time  # Calculate elapsed time
     print("\n\tGame Over!")
     print(f"\tYou answered in {total_time:.2f} Seconds.")
+    scoreboard_data(username, total_time)
     play_again = input("Do you want to play again? (yes/no): ")
     if (play_again.lower()) != 'yes':
         print("Thank you for playing Math Challenge!")
+    
+
+def scoreboard_data(username, total_time):
+    # get todays date
+    current_date = datetime.date.today()
+    
+    # create a text file to save scoreboard
+    scoreboard_file = "scoreboard.txt"
+
+    # Open the file in append mode and save the data
+    with open(scoreboard_file, 'a') as file:        
+        data = f"{username}\t - {current_date}\t - {total_time :.2f} Seconds \n"
+        file.write(data)
 
 
 if __name__ == "__main__":

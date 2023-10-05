@@ -1,0 +1,5 @@
+
+NAIS	 - 2023-10-05	 - 47.71 Seconds 
+NSD	 - 2023-10-05	 - 27.70 Seconds 
+NAISE	 - 2023-10-05	 - 30.27 Seconds 
+NAISE	 - 2023-10-05	 - 26.63 Seconds 
