@@ -165,7 +165,13 @@ def scoreboard_data(username, total_time):
     
     # create a text file to save scoreboard
     scoreboard_file = "scoreboard.txt"
-
+    
+    # Reading the exiting data from scoreboard file
+    try:
+        with open(scoreboard_file, 'r') as file:
+            data = file.readlines()
+    except FileNotFoundError:
+        data = []
     # Open the file in append mode and save the data
     with open(scoreboard_file, 'a') as file:        
         data = f"{username}\t - {current_date}\t - {total_time :.2f} Seconds \n"
