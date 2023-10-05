@@ -38,7 +38,7 @@ spaces_to_center = (terminal_width - len("WELCOME TO MATH CHALLENGE")) // 2
 welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n"
                    + ' '*spaces_to_center + "*" * 25)
 
-# Heading
+# Heading from game_details.py
 print(f"{Fore.CYAN}{Style.BRIGHT} {Back.MAGENTA}{game_details[1]}")
 
 # calling typewriter function to print the welcome message
@@ -109,6 +109,7 @@ def get_username():
 
 def main():
     username = get_username()
+    # importing game rules from the file game_details
     print(f"{Fore.GREEN}{game_details[0]}")
     input(f"""\n{Fore.YELLOW}
     {username}, Press ENTER to start the game.\n    >>>""")
