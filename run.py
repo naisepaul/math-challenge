@@ -123,10 +123,12 @@ def main():
         while True:
             guess = input(f"""{Fore.CYAN}
          Question #{str(i+1)} : {expr} = """)
+            # if want to exit from in between type exit
             if guess.lower() == 'exit':
                 print(f"{Fore.RED}\t Exiting the game...")
                 return
 
+            #if guess is non integer error message
             try:
                 guess = int(guess)
             except ValueError:
