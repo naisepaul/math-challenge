@@ -178,59 +178,16 @@ def main():
 def scoreboard_data(username, total_time):
     """
     scoreboard saves the details of username, total_time and date.
-    And also checks the username allready exist and if not adding this data.
-    if allready exist if the total time is better than old one new one will
-    update otherwise keep the old best time.
     """
-
     # get todays date
-    current_date = datetime.date.today()
-
-    # create a text file to save scoreboard
-    scoreboard_file = "scoreboard.txt"
-
-    """
-    Reading the existing data from scoreboard file. if file not exit create an
-    empty list 'data', so the code run perfectly without any error"
-    """
-
-    try:
-        with open(scoreboard_file, 'r') as file:
-            data = file.readlines()
-    except FileNotFoundError:
-        data = []
-
-    # checking the username is allready exist
-    updated = False
-
-    for index, entry in enumerate(data):
-        parts = entry.split(",")
-        existing_username = parts[0].strip()
-        existing_time = parts[-1].split(" Seconds")[0].strip()
-        if existing_username == username:
-            if float(existing_time) > total_time:
-                print(float(existing_time))
-                print(existing_username)
-                """
-                    Update the total time for the username
-                    if the new time is lower
-                """
-                data[index] = (
-                               f"{username} , {current_date}, "
-                               f"{total_time :.2f} Seconds\n"
-                              )
-                updated = True
-                break
-            else:
-                # Do nothing if the total time is equal to the existing time
-                updated = True
-                break
-
-    if not updated:
-        # if username not exists append this details
-        data.append(f"{username}, {current_date}, {total_time:.2f} Seconds\n")
-    with open(scoreboard_file, 'w') as file:
-        file.writelines(data)
+    date = datetime.date.today()
+    current_date = date.strftime("%d/%m/%Y")
+    
+    print(f"\t{Fore.GREEN}Updating scoreboard...\n")
+    scoreboard_to_update = SHEET.worksheet("scoreboard")
+    scoreboard_to_update.append_row([
+      str(username), str(current_date), f"{total_time:.2f} Seconds"])
+    print(f"\t{Fore.GREEN}scoreboard Update successful..\n")
 
 
 if __name__ == "__main__":

@@ -1,3 +1,3 @@
 ANU , 2023-10-06, 19.40 Seconds
-NAISE , 2023-10-06, 12.00 Seconds
+NAISE , 2023-10-06, 12.85 Seconds
 JOHN , 2023-10-06, 11.92 Seconds
