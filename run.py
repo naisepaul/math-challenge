@@ -1,3 +1,5 @@
+import gspread
+from google.oauth2.service_account import Credentials
 import random  # making random choice
 import shutil  # Import the shutil module to get the terminal width
 import sys  # typewriter effect using sys module
@@ -13,8 +15,22 @@ https://www.youtube.com/watch?v=u51Zjlnui4Y
 """
 colorama.init(autoreset=True)  # for auto reset color
 
-# For typewritter effect
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
 
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('math_challenge')
+
+scoreboard = SHEET.worksheet("scoreboard")
+
+data = scoreboard.get_all_values()
+
+# For typewritter effect
 
 def typewriter_effect(text, delay=0.2, color=Fore.WHITE, bg_color=Back.BLACK):
     """
