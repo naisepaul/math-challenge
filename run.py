@@ -160,18 +160,32 @@ def main():
     
 
 def scoreboard_data(username, total_time):
+    """
+    scoreboard saves the details of username, total_time and date.
+    And also checks the username allready exist and if not adding this data.
+    if allready exist if the total time is better than old one new one will
+    update otherwise keep the old best time.
+    """
+
     # get todays date
     current_date = datetime.date.today()
-    
+        
     # create a text file to save scoreboard
     scoreboard_file = "scoreboard.txt"
     
-    # Reading the exiting data from scoreboard file
+    """
+    Reading the existing data from scoreboard file. if file not exit create an
+    empty list 'data', so the code run perfectly without any error"
+    """
+
     try:
         with open(scoreboard_file, 'r') as file:
             data = file.readlines()
     except FileNotFoundError:
         data = []
+
+    # checking the username is allready exist
+    updated = False
     # Open the file in append mode and save the data
     with open(scoreboard_file, 'a') as file:        
         data = f"{username}\t - {current_date}\t - {total_time :.2f} Seconds \n"
