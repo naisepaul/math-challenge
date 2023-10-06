@@ -60,7 +60,7 @@ OPERATOR_COLORS = {
 
 min_value = 3  # minimum value
 max_value = 15  # maximum value
-total_questions = 10  # total questions to be answered
+total_questions = 5  # total questions to be answered
 
 
 def generate_questions():
@@ -99,7 +99,7 @@ def get_username():
             Check if the username has less than 3 characters
             or does not contain any letters or contain space
             """
-            print(f"""{Fore.RED}\tInvalid username. Please enter at least 3 
+            print(f"""{Fore.RED}\tInvalid username. Please enter at least 3
             characters with at least one letter without space!""")
 
         else:
@@ -123,22 +123,22 @@ def main():
 
         while True:
             guess = input(f"""{Fore.CYAN}
-         Question #{str(i+1)} : {expr} = """)
-            
+        Question #{str(i+1)} : {expr} = """)
+
             # answer will be an int. So changing to a string
             if guess == str(answer):
                 current_time = time.time()  # current time
                 curr_ques_end_time = current_time - curr_ques_start_time
                 print(f"""{Fore.GREEN}
-         Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
-                break           
-            
-             # if want to exit from in between type exit
+        Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
+                break
+
+            # if want to exit from in between type exit
             elif guess.lower() == 'exit':
                 print(f"{Fore.RED}\t Exiting the game...")
                 return
 
-            #if guess is non integer error message
+            # if guess is non integer error message
             try:
                 guess = int(guess)
             except ValueError:
@@ -157,7 +157,7 @@ def main():
     play_again = input("Do you want to play again? (yes/no): ")
     if (play_again.lower()) != 'yes':
         print("Thank you for playing Math Challenge!")
-    
+
 
 def scoreboard_data(username, total_time):
     """
@@ -169,10 +169,10 @@ def scoreboard_data(username, total_time):
 
     # get todays date
     current_date = datetime.date.today()
-        
+
     # create a text file to save scoreboard
     scoreboard_file = "scoreboard.txt"
-    
+
     """
     Reading the existing data from scoreboard file. if file not exit create an
     empty list 'data', so the code run perfectly without any error"
@@ -186,10 +186,35 @@ def scoreboard_data(username, total_time):
 
     # checking the username is allready exist
     updated = False
-    # Open the file in append mode and save the data
-    with open(scoreboard_file, 'a') as file:        
-        data = f"{username}\t - {current_date}\t - {total_time :.2f} Seconds \n"
-        file.write(data)
+
+    for index, entry in enumerate(data):
+        parts = entry.split(",")
+        existing_username = parts[0].strip()
+        existing_time = parts[-1].split(" Seconds")[0].strip()
+        if existing_username == username:
+            if float(existing_time) > total_time:
+                print(float(existing_time))
+                print(existing_username)
+                """
+                    Update the total time for the username
+                    if the new time is lower
+                """
+                data[index] = (
+                               f"{username} , {current_date}, "
+                               f"{total_time :.2f} Seconds\n"
+                              )
+                updated = True
+                break
+            else:
+                # Do nothing if the total time is equal to the existing time
+                updated = True
+                break
+
+    if not updated:
+        # if username not exists append this details
+        data.append(f"{username}, {current_date}, {total_time:.2f} Seconds\n")
+    with open(scoreboard_file, 'w') as file:
+        file.writelines(data)
 
 
 if __name__ == "__main__":
