@@ -158,7 +158,10 @@ def main():
 
             # if want to exit from in between type exit
             elif guess.lower() == 'exit':
-                print(f"{Fore.RED}\t Exiting the game...")
+                # print(f"{Fore.RED}\t Exiting the game...")
+                # type writer effect for exiting the game
+                typewriter_effect("\n\tExiting the game...\n", delay=0.05,
+                  color=Fore.RED)
                 return
 
             # if guess is non integer error message
