@@ -130,6 +130,11 @@ def main():
     print(f"{Fore.GREEN}{game_details[0]}")
     input(f"""\n{Fore.YELLOW}
     {username}, Press ENTER to start the game.\n    >>>""")
+    print(f"{Fore.YELLOW}\tType{Fore.RED}{Style.BRIGHT} "
+          f"'exit'{Fore.YELLOW} for quit the game\n")
+    # print(f"{Fore.GREEN}\n\tLoading the game...")
+    typewriter_effect("\tLoading the game...", delay=0.02,
+                  color=Fore.GREEN)
     # Record the start time for first question
     ques_start_time = time.time()
 
