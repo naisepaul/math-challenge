@@ -32,6 +32,7 @@ data = scoreboard.get_all_values()
 
 # For typewritter effect
 
+
 def typewriter_effect(text, delay=0.2, color=Fore.WHITE, bg_color=Back.BLACK):
     """
     Welcome message in typewriter effect
@@ -182,12 +183,28 @@ def scoreboard_data(username, total_time):
     # get todays date
     date = datetime.date.today()
     current_date = date.strftime("%d/%m/%Y")
-    
+
     print(f"\t{Fore.GREEN}Updating scoreboard...\n")
     scoreboard_to_update = SHEET.worksheet("scoreboard")
     scoreboard_to_update.append_row([
       str(username), str(current_date), f"{total_time:.2f} Seconds"])
     print(f"\t{Fore.GREEN}scoreboard Update successful..\n")
+    display_top_15_best_time()
+
+
+def display_top_15_best_time():
+    # Display top 15 best times
+
+    scoreboard_worksheet = SHEET.worksheet('scoreboard').get_all_values()[1:]
+    scoreboard_worksheet.sort(key=lambda x: x[2])
+    print(f"{Fore.RED}\tUsername \tDate \tBest Time")
+    print(f"""{Fore.YELLOW}
+    ==========================================\n""")
+    for index, row in enumerate(scoreboard_worksheet[:15], start=1):
+        username, date, total_time = row
+        print(f"""{Fore.BLUE}{index}.\t {username}\t\t{date}\t{total_time}""")
+    print(f"""{Fore.YELLOW}
+    ==========================================\n""")
 
 
 if __name__ == "__main__":
