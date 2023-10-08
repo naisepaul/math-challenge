@@ -158,10 +158,9 @@ def main():
 
             # if want to exit from in between type exit
             elif guess.lower() == 'exit':
-                # print(f"{Fore.RED}\t Exiting the game...")
                 # type writer effect for exiting the game
                 typewriter_effect("\n\tExiting the game...\n", delay=0.05,
-                  color=Fore.RED)
+                color=Fore.RED)
                 return
 
             # if guess is non integer error message
@@ -180,9 +179,19 @@ def main():
     print("\n\tGame Over!")
     print(f"\tYou answered in {total_time:.2f} Seconds.")
     scoreboard_data(username, total_time)
-    play_again = input("Do you want to play again? (yes/no): ")
-    if (play_again.lower()) != 'yes':
-        print("Thank you for playing Math Challenge!")
+    pl# ay_again = input("Do you want to play again? (yes/no): ")
+    if#  (play_again.lower()) != 'yes':
+      #   print("Thank you for playing Math Challenge!")
+    
+    # offer choice to the player
+    print(f"\n{Fore.BLUE} What would you like to do next ?")
+    print("1. Play Again")
+    print("2. Scoreboard")
+    print("3. Exit")
+    print("4. FeedBack")
+
+    choice = input("Enter Your choice (1/2/3/4) >>> ")
+
 
 
 def scoreboard_data(username, total_time):
