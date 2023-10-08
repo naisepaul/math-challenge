@@ -4,6 +4,7 @@ import random  # making random choice
 import shutil  # Import the shutil module to get the terminal width
 import sys  # typewriter effect using sys module
 import time  # time
+import os
 import datetime
 from game_details import *  # import game_details file
 
@@ -126,72 +127,93 @@ def get_username():
 
 def main():
     username = get_username()
-    # importing game rules from the file game_details
-    print(f"{Fore.GREEN}{game_details[0]}")
-    input(f"""\n{Fore.YELLOW}
-    {username}, Press ENTER to start the game.\n    >>>""")
-    # type 'exit' to quit the game
-    print(f"{Fore.YELLOW}\tType{Fore.RED}{Style.BRIGHT} "
-          f"'exit'{Fore.YELLOW} for quit the game\n")
-    # type writer effect for loading the game
-    typewriter_effect("\tLoading the game...", delay=0.02,
-                  color=Fore.GREEN)
-    # Record the start time for first question
-    ques_start_time = time.time()
+    while True:
+        
+        # importing game rules from the file game_details
+        print(f"{Fore.GREEN}{game_details[0]}")
+        input(f"""\n{Fore.YELLOW}
+        {username}, Press ENTER to start the game.\n    >>>""")
+        # type 'exit' to quit the game
+        print(f"{Fore.YELLOW}\tType{Fore.RED}{Style.BRIGHT} "
+            f"'exit'{Fore.YELLOW} for quit the game\n")
+        # type writer effect for loading the game
+        typewriter_effect("\tLoading the game...", delay=0.02,
+                    color=Fore.GREEN)
+        # Record the start time for first question
+        ques_start_time = time.time()
 
-    for i in range(total_questions):
-        expr, answer = generate_questions()
-        # Record the start time of current question
-        curr_ques_start_time = time.time()
+        for i in range(total_questions):
+            expr, answer = generate_questions()
+            # Record the start time of current question
+            curr_ques_start_time = time.time()
 
-        while True:
-            guess = input(f"""{Fore.CYAN}
-        Question #{str(i+1)} : {expr} = """)
+            while True:
+                guess = input(f"""{Fore.CYAN}
+            Question #{str(i+1)} : {expr} = """)
 
-            # answer will be an int. So changing to a string
-            if guess == str(answer):
-                current_time = time.time()  # current time
-                curr_ques_end_time = current_time - curr_ques_start_time
-                print(f"""{Fore.GREEN}
-        Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
-                break
+                # answer will be an int. So changing to a string
+                if guess == str(answer):
+                    current_time = time.time()  # current time
+                    curr_ques_end_time = current_time - curr_ques_start_time
+                    print(f"""{Fore.GREEN}
+            Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
+                    break
 
-            # if want to exit from in between type exit
-            elif guess.lower() == 'exit':
-                # type writer effect for exiting the game
-                typewriter_effect("\n\tExiting the game...\n", delay=0.05,
-                color=Fore.RED)
-                return
+                # if want to exit from in between type exit
+                elif guess.lower() == 'exit':
+                    # type writer effect for exiting the game
+                    typewriter_effect("\n\tExiting the game...\n", delay=0.05,
+                    color=Fore.RED)
+                    return
 
-            # if guess is non integer error message
-            try:
-                guess = int(guess)
-            except ValueError:
-                print(f"{Fore.RED}\t Invalid input. Please enter an integer.")
-                continue
-            else:
-                print(f"{Fore.RED}\n\t Wrong Answer")
-        # Pause before the next question
-        time.sleep(.5)
+                # if guess is non integer error message
+                try:
+                    guess = int(guess)
+                except ValueError:
+                    print(f"{Fore.RED}\t Invalid input. Please enter an integer.")
+                    continue
+                else:
+                    print(f"{Fore.RED}\n\t Wrong Answer")
+            # Pause before the next question
+            time.sleep(.5)
 
-    ques_end_time = time.time()  # total question end time
-    total_time = ques_end_time - ques_start_time  # Calculate elapsed time
-    print("\n\tGame Over!")
-    print(f"\tYou answered in {total_time:.2f} Seconds.")
-    scoreboard_data(username, total_time)
-    pl# ay_again = input("Do you want to play again? (yes/no): ")
-    if#  (play_again.lower()) != 'yes':
-      #   print("Thank you for playing Math Challenge!")
-    
-    # offer choice to the player
-    print(f"\n{Fore.BLUE} What would you like to do next ?")
-    print("1. Play Again")
-    print("2. Scoreboard")
-    print("3. Exit")
-    print("4. FeedBack")
+        ques_end_time = time.time()  # total question end time
+        total_time = ques_end_time - ques_start_time  # Calculate elapsed time
+        print("\n\tGame Over!")
+        print(f"\tYou answered in {total_time:.2f} Seconds.")
+        scoreboard_data(username, total_time)
+        # play_again = input("Do you want to play again? (yes/no): ")
+        # if (play_again.lower()) != 'yes':
+        #      print("Thank you for playing Math Challenge!")
+        
+        # offer choice to the player
+        print(f"\n\t{Fore.BLUE} What would you like to do next ?\n")
+        print(f"\t1. Play Again\n"
+            f"\t2. Scoreboard\n"
+            f"\t3. Exit\n"
+            f"\t4. FeedBack\n")
 
-    choice = input("Enter Your choice (1/2/3/4) >>> ")
+        choice = input("Enter Your choice (1/2/3/4) >>> ")
 
+        if choice ==  '1':
+            typewriter_effect("\tLoading the game...", delay=0.02,
+                    color=Fore.GREEN)
+            get_username_flag = False  # Play Again
+        elif choice == '2':
+            os.system('clear') # clear the screen
+            display_top_15_best_time()  # scoreboard
+        elif choice == '3':
+            print(f"{Fore.RED}\n\tExiting the game...")
+            print(f"""{Fore.CYAN}
+            \n\tThanks for playing, {username}.
+            \n\tSee you again!\n""")
+            return  # Exit the game
+        elif choice == '4':
+            input("Enter your valuable Feedback >>> ")
+            print("Thank you for the feedback")
+        else:        
+            print(f"""{Fore.RED}\n\t
+            That is not a valid choice. Please try again.\n""")
 
 
 def scoreboard_data(username, total_time):
@@ -207,8 +229,7 @@ def scoreboard_data(username, total_time):
     scoreboard_to_update.append_row([
       str(username), str(current_date), f"{total_time:.2f} Seconds"])
     print(f"\t{Fore.GREEN}scoreboard Update successful..\n")
-    display_top_15_best_time()
-
+    
 
 def display_top_15_best_time():
     # Display top 15 best times
