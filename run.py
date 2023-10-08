@@ -135,7 +135,7 @@ def main():
         {username}, Press ENTER to start the game.\n    >>>""")
         # type 'exit' to quit the game
         print(f"{Fore.YELLOW}\tType{Fore.RED}{Style.BRIGHT} "
-            f"'exit'{Fore.YELLOW} for quit the game\n")
+            f"'exit'{Style.RESET_ALL}{Fore.YELLOW} for quit the game\n")
         # type writer effect for loading the game
         typewriter_effect("\tLoading the game...", delay=0.02,
                     color=Fore.GREEN)
