@@ -192,28 +192,33 @@ def main():
             f"\t2. Scoreboard\n"
             f"\t3. Exit\n"
             f"\t4. FeedBack\n")
+        while True:
+            choice = input("Enter Your choice (1/2/3/4) >>> ")
 
-        choice = input("Enter Your choice (1/2/3/4) >>> ")
-
-        if choice ==  '1':
-            typewriter_effect("\tLoading the game...", delay=0.02,
-                    color=Fore.GREEN)
-            get_username_flag = False  # Play Again
-        elif choice == '2':
-            os.system('clear') # clear the screen
-            display_top_15_best_time()  # scoreboard
-        elif choice == '3':
-            print(f"{Fore.RED}\n\tExiting the game...")
-            print(f"""{Fore.CYAN}
-            \n\tThanks for playing, {username}.
-            \n\tSee you again!\n""")
-            return  # Exit the game
-        elif choice == '4':
-            input("Enter your valuable Feedback >>> ")
-            print("Thank you for the feedback")
-        else:        
-            print(f"""{Fore.RED}\n\t
-            That is not a valid choice. Please try again.\n""")
+            if choice ==  '1':
+                typewriter_effect("\tLoading the game...", delay=0.02,
+                        color=Fore.GREEN)
+                # Set the flag to False to skip username input
+                get_username_flag = False  # Play Again
+                break  # Break the inner loop and go back to the main loop
+            elif choice == '2':
+                os.system('clear') # clear the screen
+                display_top_15_best_time()  # scoreboard
+                continue  # continue to the choices
+            elif choice == '3':
+                print(f"{Fore.RED}\n\tExiting the game...")
+                print(f"""{Fore.CYAN}
+                \n\tThanks for playing, {username}.
+                \n\tSee you again!\n""")
+                return  # Exit the game
+            elif choice == '4':
+                input("Enter your valuable Feedback >>> ")
+                print(f"""{Fore.CYAN}Thank you for the feedback {username}""")
+                return   # Exit the game
+            else:        
+                print(f"""{Fore.RED}\n
+                That is not a valid choice. Please try again.\n""")
+                continue  # continue to the choices
 
 
 def scoreboard_data(username, total_time):
