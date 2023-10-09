@@ -20,7 +20,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
-    ]
+]
 
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
@@ -46,7 +46,7 @@ def typewriter_effect(text, delay=0.2, color=Fore.WHITE, bg_color=Back.BLACK):
         time.sleep(delay)
     sys.stdout.write('\n')  # Add a newline character at the end
 
-"""
+
 # Get the width of the terminal window
 terminal_width, _ = shutil.get_terminal_size()
 
@@ -55,8 +55,9 @@ spaces_to_center = (terminal_width - len("WELCOME TO MATH CHALLENGE")) // 2
 
 welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n"
                    + ' ' * spaces_to_center + "*" * 25)
-"""
-welcome_message = ("WELCOME TO MATH CHALLENGE\n\n") + "*" * 25
+
+welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n"
+                   + ' ' * spaces_to_center + "*" * 25)
 
 # Heading from game_details.py
 print(f"{Fore.CYAN}{Style.BRIGHT} {Back.MAGENTA}{game_details[1]}")
@@ -128,19 +129,19 @@ def get_username():
 
 
 def main():
+    # get_username_flag = True
     username = get_username()
     while True:
-        
         # importing game rules from the file game_details
         print(f"{Fore.GREEN}{game_details[0]}")
         input(f"""\n{Fore.YELLOW}
         {username}, Press ENTER to start the game.\n    >>>""")
         # type 'exit' to quit the game
         print(f"{Fore.YELLOW}\tType{Fore.RED}{Style.BRIGHT} "
-            f"'exit'{Style.RESET_ALL}{Fore.YELLOW} for quit the game\n")
+              f"'exit'{Style.RESET_ALL}{Fore.YELLOW} for quit the game\n")
         # type writer effect for loading the game
         typewriter_effect("\tLoading the game...", delay=0.02,
-                    color=Fore.GREEN)
+                          color=Fore.GREEN)
         # Record the start time for first question
         ques_start_time = time.time()
 
@@ -165,14 +166,15 @@ def main():
                 elif guess.lower() == 'exit':
                     # type writer effect for exiting the game
                     typewriter_effect("\n\tExiting the game...\n", delay=0.05,
-                    color=Fore.RED)
+                                      color=Fore.RED)
                     return
 
                 # if guess is non integer error message
                 try:
                     guess = int(guess)
                 except ValueError:
-                    print(f"{Fore.RED}\t Invalid input. Please enter an integer.")
+                    print(f"{Fore.RED}\t Invalid input. Please"
+                          f"enter an integer.")
                     continue
                 else:
                     print(f"{Fore.RED}\n\t Wrong Answer")
@@ -187,24 +189,24 @@ def main():
         # play_again = input("Do you want to play again? (yes/no): ")
         # if (play_again.lower()) != 'yes':
         #      print("Thank you for playing Math Challenge!")
-        
+
         # offer choice to the player
         print(f"\n\t{Fore.BLUE} What would you like to do next ?\n")
         print(f"\t1. Play Again\n"
-            f"\t2. Scoreboard\n"
-            f"\t3. Exit\n"
-            f"\t4. FeedBack\n")
+              f"\t2. Scoreboard\n"
+              f"\t3. Exit\n"
+              f"\t4. FeedBack\n")
         while True:
             choice = input("Enter Your choice (1/2/3/4) >>> ")
 
-            if choice ==  '1':
+            if choice == '1':
                 typewriter_effect("\tLoading the game...", delay=0.02,
-                        color=Fore.GREEN)
+                                  color=Fore.GREEN)
                 # Set the flag to False to skip username input
                 get_username_flag = False  # Play Again
                 break  # Break the inner loop and go back to the main loop
             elif choice == '2':
-                os.system('clear') # clear the screen
+                os.system('clear')  # clear the screen
                 display_top_15_best_time()  # scoreboard
                 continue  # continue to the choices
             elif choice == '3':
@@ -217,7 +219,7 @@ def main():
                 input("Enter your valuable Feedback >>> ")
                 print(f"""{Fore.CYAN}Thank you for the feedback {username}""")
                 return   # Exit the game
-            else:        
+            else:
                 print(f"""{Fore.RED}\n
                 That is not a valid choice. Please try again.\n""")
                 continue  # continue to the choices
@@ -234,9 +236,9 @@ def scoreboard_data(username, total_time):
     print(f"\t{Fore.GREEN}Updating scoreboard...\n")
     scoreboard_to_update = SHEET.worksheet("scoreboard")
     scoreboard_to_update.append_row([
-      str(username), str(current_date), f"{total_time:.2f} Seconds"])
+        str(username), str(current_date), f"{total_time:.2f} Seconds"])
     print(f"\t{Fore.GREEN}scoreboard Update successful..\n")
-    
+
 
 def display_top_15_best_time():
     # Display top 15 best times
