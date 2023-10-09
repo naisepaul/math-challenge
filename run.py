@@ -41,7 +41,7 @@ def typewriter_effect(text, delay=0.2, color=Fore.WHITE, bg_color=Back.BLACK):
     """
 
     for char in text:
-        sys.stdout.write(bg_color + color + char)
+        sys.stdout.write(color + char)
         sys.stdout.flush()
         time.sleep(delay)
     sys.stdout.write('\n')  # Add a newline character at the end
@@ -60,12 +60,12 @@ welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n"
                    + ' ' * spaces_to_center + "*" * 25)
 
 # Heading from game_details.py
-print(f"{Fore.CYAN}{Style.BRIGHT} {Back.MAGENTA}{game_details[1]}")
+print(f"{Fore.CYAN}{Style.BRIGHT}{game_details[1]}")
 
 # calling typewriter function to print the welcome message
 
 typewriter_effect(welcome_message, delay=0.02,
-                  color=Fore.RED, bg_color=Back.WHITE)
+                  color=Fore.RED)
 
 
 OPERATORS = ["+", "-", "*"]  # operators
