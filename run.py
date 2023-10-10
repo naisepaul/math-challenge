@@ -136,14 +136,15 @@ def main():
     and time taken  for each question.
     Scoring system allowing the player to earn score for each correct answers 
     and deducted score for wrong answers.
+    Each question have 3 attempt for correct answer after that jump to 
+    next question
     """
     # get_username_flag = True
     username = get_username()
     score = 0  # initialize the player score to zero
     corrent_answer_score = 10  # correct answer score
     wrong_answer_score = -2  # wrong answer score
-    max_attempt = 3  # maximum attempt for each question
-    
+       
     while True:
         # importing game rules from the file game_details
         print(f"{Fore.GREEN}{game_details[0]}")
@@ -162,8 +163,10 @@ def main():
             expr, answer = generate_questions()
             # Record the start time of current question
             curr_ques_start_time = time.time()
+            
+            wrong_attempt = 0  # counting wrong attempt for current question
 
-            while True:
+            while wrong_attempt < 3 :  # allow 3 attempt for each question
                 guess = input(f"""{Fore.CYAN}
             Question #{str(i+1)} : {expr} = """)
 
@@ -173,9 +176,10 @@ def main():
                     curr_ques_end_time = current_time - curr_ques_start_time
                     print(f"""{Fore.GREEN}
             Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
+                    score+= corrent_answer_score
                     break
 
-                # if want to exit from in between type exit
+                # if want to exit from the game in between type 'exit'
                 elif guess.lower() == 'exit':
                     # type writer effect for exiting the game
                     typewriter_effect("\n\tExiting the game...\n", delay=0.05,
@@ -190,15 +194,18 @@ def main():
                           f"enter an integer.")
                     continue
                 else:
+                    score += wrong_answer_score
                     print(f"{Fore.RED}\n\t Wrong Answer")
+                    wrong_attempt +=1                                       
+
             # Pause before the next question
             time.sleep(.5)
 
         ques_end_time = time.time()  # total question end time
         total_time = ques_end_time - ques_start_time  # Calculate elapsed time
         print("\n\tGame Over!")
-        print(f"\tYou answered in {total_time:.2f} Seconds.")
-        scoreboard_data(username, total_time)
+        print(f"\tYou answered in {total_time:.2f} Seconds and your score is {score}")
+        scoreboard_data(username, total_time, score)
 
         # offer choice to the player
         print(f"\n\t{Fore.BLUE} What would you like to do next ?\n")
@@ -206,6 +213,10 @@ def main():
               f"\t2. Scoreboard\n"
               f"\t3. Exit\n"
               f"\t4. FeedBack\n")
+        
+        # Reset the score for the next game
+        score = 0
+
         while True:
             choice = input("Enter Your choice (1/2/3/4) >>> ")
 
@@ -235,9 +246,9 @@ def main():
                 continue  # continue to the choices
 
 
-def scoreboard_data(username, total_time):
+def scoreboard_data(username, total_time, score):
     """
-    scoreboard saves the details of username, total_time and date.
+    scoreboard saves the details of username, total_time, score and date.
     """
     # get todays date
     date = datetime.date.today()
@@ -246,7 +257,7 @@ def scoreboard_data(username, total_time):
     print(f"\t{Fore.GREEN}Updating scoreboard...\n")
     scoreboard_to_update = SHEET.worksheet("scoreboard")
     scoreboard_to_update.append_row([
-        str(username), str(current_date), f"{total_time:.2f} Seconds"])
+        str(username), str(current_date), str(score), f"{total_time:.2f} Seconds"])
     print(f"\t{Fore.GREEN}scoreboard Update successful..\n")
 
 
@@ -255,12 +266,12 @@ def display_top_15_best_time():
 
     scoreboard_worksheet = SHEET.worksheet('scoreboard').get_all_values()[1:]
     scoreboard_worksheet.sort(key=lambda x: x[2])
-    print(f"{Fore.RED}\tUsername \tDate \tBest Time")
+    print(f"{Fore.RED}\tUsername \tDate \tScore \tBest Time")
     print(f"""{Fore.YELLOW}
     ==========================================\n""")
     for index, row in enumerate(scoreboard_worksheet[:15], start=1):
-        username, date, total_time = row
-        print(f"""{Fore.BLUE}{index}.\t {username}\t\t{date}\t{total_time}""")
+        username, date, Score, total_time = row
+        print(f"""{Fore.BLUE}{index}.\t {username}\t\t{date}\t{score}\t{total_time}""")
     print(f"""{Fore.YELLOW}
     ==========================================\n""")
 
