@@ -129,12 +129,21 @@ def get_username():
 
 
 def main():
+    """
+    Main function take the players username and setting the game enviornment
+    Each question in the game, the function manages the presentation of 
+    the mathematical expression, handles players input, evaluate the answer
+    and time taken  for each question.
+    Scoring system allowing the player to earn score for each correct answers 
+    and deducted score for wrong answers.
+    """
     # get_username_flag = True
     username = get_username()
     score = 0  # initialize the player score to zero
     corrent_answer_score = 10  # correct answer score
     wrong_answer_score = -2  # wrong answer score
     max_attempt = 3  # maximum attempt for each question
+    
     while True:
         # importing game rules from the file game_details
         print(f"{Fore.GREEN}{game_details[0]}")
