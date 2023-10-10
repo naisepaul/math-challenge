@@ -191,7 +191,7 @@ def main():
                     guess = int(guess)
                 except ValueError:
                     print(f"{Fore.RED}\t Invalid input. Please"
-                          f"enter an integer.")
+                          f" enter an integer.")
                     continue
                 else:
                     score += wrong_answer_score
@@ -257,7 +257,7 @@ def scoreboard_data(username, score, total_time):
     print(f"\t{Fore.GREEN}Updating scoreboard...\n")
     scoreboard_to_update = SHEET.worksheet("scoreboard")
     scoreboard_to_update.append_row([
-        str(username), str(current_date), str(score), f"{total_time:.2f} Seconds"])
+        str(username), str(current_date), f"{score}", f"{total_time:.2f} Seconds"])
     print(f"\t{Fore.GREEN}scoreboard Update successful..\n")
 
 
@@ -265,15 +265,18 @@ def display_top_15_best_time():
     # Display top 15 best times
 
     scoreboard_worksheet = SHEET.worksheet('scoreboard').get_all_values()[1:]
-    scoreboard_worksheet.sort(key=lambda x: x[3])
-    print(f"{Fore.RED}\tUsername \tDate\t\tScore \tBest Time")
+    # for entry in scoreboard_worksheet:
+    #     entry[2] = int(entry[2])  # Convert score to integer
+        # entry[3] = float(entry[3])  # Convert time to float
+    scoreboard_worksheet.sort(key=lambda x: (x[3], x[2]))
+    print(f"{Fore.RED}\tUsername\tDate\t\tScore\tBest Time")
     print(f"""{Fore.YELLOW}
-    ==========================================\n""")
+    ======================================================\n""")
     for index, row in enumerate(scoreboard_worksheet[:15], start=1):
         username, date, score, total_time = row
         print(f"""{Fore.BLUE}{index}.\t {username}\t\t{date}\t{score}\t{total_time}""")
     print(f"""{Fore.YELLOW}
-    ==========================================\n""")
+    ======================================================\n""")
 
 
 if __name__ == "__main__":
