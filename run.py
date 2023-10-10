@@ -131,6 +131,10 @@ def get_username():
 def main():
     # get_username_flag = True
     username = get_username()
+    score = 0  # initialize the player score to zero
+    corrent_answer_score = 10  # correct answer score
+    wrong_answer_score = -2  # wrong answer score
+    max_attempt = 3  # maximum attempt for each question
     while True:
         # importing game rules from the file game_details
         print(f"{Fore.GREEN}{game_details[0]}")
@@ -186,9 +190,6 @@ def main():
         print("\n\tGame Over!")
         print(f"\tYou answered in {total_time:.2f} Seconds.")
         scoreboard_data(username, total_time)
-        # play_again = input("Do you want to play again? (yes/no): ")
-        # if (play_again.lower()) != 'yes':
-        #      print("Thank you for playing Math Challenge!")
 
         # offer choice to the player
         print(f"\n\t{Fore.BLUE} What would you like to do next ?\n")
