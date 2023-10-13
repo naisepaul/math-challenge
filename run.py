@@ -259,7 +259,7 @@ def scoreboard_data(username, score, total_time):
     print(f"\t{Fore.GREEN}Updating scoreboard...\n")
     scoreboard_to_update = SHEET.worksheet("scoreboard")
     scoreboard_to_update.append_row([
-        str(username), str(current_date), f"{score}", f"{total_time:.2f} Seconds"])
+        str(username), str(current_date), f"{score}", f"{total_time:.2f} Seconds", f"{points}"])
     print(f"\t{Fore.GREEN}scoreboard Update successful..\n")
 
 
