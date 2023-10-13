@@ -271,14 +271,14 @@ def display_top_15_best_time():
     #     entry[2] = int(entry[2])  # Convert score to integer
         # entry[3] = float(entry[3])  # Convert time to float
     scoreboard_worksheet.sort(key=lambda x: (x[4]))
-    print(f"{Fore.RED}\tUsername\tDate\t\tScore\tBest Time")
+    print(f"{Fore.RED}\tUsername\tDate\t\tScore\tBest Time\tPoints")
     print(f"""{Fore.YELLOW}
-    ======================================================\n""")
+    ===============================================================\n""")
     for index, row in enumerate(scoreboard_worksheet[:15], start=1):
         username, date, score, total_time = row
         print(f"""{Fore.BLUE}{index}.\t {username}\t\t{date}\t{score}\t{total_time}""")
     print(f"""{Fore.YELLOW}
-    ======================================================\n""")
+    ===============================================================\n""")
 
 
 if __name__ == "__main__":
