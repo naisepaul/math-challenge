@@ -229,7 +229,7 @@ def main():
                 break  # Break the inner loop and go back to the main loop
             elif choice == '2':
                 os.system('clear')  # clear the screen
-                display_top_15_best_time()  # scoreboard
+                display_top_15_best_player()  # scoreboard
                 continue  # continue to the choices
             elif choice == '3':
                 print(f"{Fore.RED}\n\tExiting the game...")
@@ -262,7 +262,7 @@ def scoreboard_data(username, score, total_time, points):
     print(f"\t{Fore.GREEN}scoreboard Update successful..\n")
 
 
-def display_top_15_best_time():
+def display_top_15_best_player():
     # Display top 15 best times
 
     scoreboard_worksheet = SHEET.worksheet('scoreboard').get_all_values()[1:]
