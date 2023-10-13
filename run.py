@@ -259,7 +259,7 @@ def scoreboard_data(username, score, total_time):
     print(f"\t{Fore.GREEN}Updating scoreboard...\n")
     scoreboard_to_update = SHEET.worksheet("scoreboard")
     scoreboard_to_update.append_row([
-        str(username), str(current_date), f"{score}", f"{total_time:.2f} Seconds", f"{points}"])
+        str(username), str(current_date), f"{score}", f"{total_time:.2f} Seconds", f"{points:.2f}"])
     print(f"\t{Fore.GREEN}scoreboard Update successful..\n")
 
 
@@ -267,16 +267,14 @@ def display_top_15_best_time():
     # Display top 15 best times
 
     scoreboard_worksheet = SHEET.worksheet('scoreboard').get_all_values()[1:]
-    # for entry in scoreboard_worksheet:
-    #     entry[2] = int(entry[2])  # Convert score to integer
-        # entry[3] = float(entry[3])  # Convert time to float
+    
     scoreboard_worksheet.sort(key=lambda x: (x[4]))
     print(f"{Fore.RED}\tUsername\tDate\t\tScore\tBest Time\tPoints")
     print(f"""{Fore.YELLOW}
     ===============================================================\n""")
     for index, row in enumerate(scoreboard_worksheet[:15], start=1):
         username, date, score, total_time = row
-        print(f"""{Fore.BLUE}{index}.\t {username}\t\t{date}\t{score}\t{total_time}""")
+        print(f"""{Fore.BLUE}{index}.\t {username}\t\t{date}\t{score}\t{total_time}\t{points}""")
     print(f"""{Fore.YELLOW}
     ===============================================================\n""")
 
