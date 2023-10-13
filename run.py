@@ -223,7 +223,7 @@ def main():
                 typewriter_effect("\tLoading the game...", delay=0.02,
                                   color=Fore.GREEN)
                 # Set the flag to False to skip username input
-                get_username_flag = False  # Play Again
+                # get_username_flag = False  # Play Again
                 break  # Break the inner loop and go back to the main loop
             elif choice == '2':
                 os.system('clear')  # clear the screen
