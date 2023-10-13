@@ -146,7 +146,7 @@ def main():
        
     while True:
         # importing game rules from the file game_details
-        print(f"{Fore.GREEN}{game_details[0]}")
+        print(f"\n\n{Fore.GREEN}{game_details[0]}")
         input(f"""\n{Fore.YELLOW}
         {username}, Press ENTER to start the game.\n    >>>""")
         # type 'exit' to quit the game
