@@ -200,15 +200,14 @@ def main():
 
             # Pause before the next question
             time.sleep(.5)
-
-        points = score / total_time # calculating points to get best player
-
+        
         ques_end_time = time.time()  # total question end time
         total_time = ques_end_time - ques_start_time  # Calculate elapsed time
+        points = score / total_time # calculating points to get best player
         print("\n\tGame Over!")
         print(f"\tYou answered in {total_time:.2f} Seconds and your score is {score}")
         scoreboard_data(username, score, total_time, points)
-
+              
         # offer choice to the player
         print(f"\n\t{Fore.BLUE} What would you like to do next ?\n")
         print(f"\t1. Play Again\n"
@@ -248,14 +247,14 @@ def main():
                 continue  # continue to the choices
 
 
-def scoreboard_data(username, score, total_time):
+def scoreboard_data(username, score, total_time, points):
     """
     scoreboard saves the details of username, total_time, score and date.
     """
     # get todays date
     date = datetime.date.today()
     current_date = date.strftime("%d/%m/%Y")
-
+    
     print(f"\t{Fore.GREEN}Updating scoreboard...\n")
     scoreboard_to_update = SHEET.worksheet("scoreboard")
     scoreboard_to_update.append_row([
@@ -273,7 +272,7 @@ def display_top_15_best_time():
     print(f"""{Fore.YELLOW}
     ===============================================================\n""")
     for index, row in enumerate(scoreboard_worksheet[:15], start=1):
-        username, date, score, total_time = row
+        username, date, score, total_time, points = row
         print(f"""{Fore.BLUE}{index}.\t {username}\t\t{date}\t{score}\t{total_time}\t{points}""")
     print(f"""{Fore.YELLOW}
     ===============================================================\n""")
