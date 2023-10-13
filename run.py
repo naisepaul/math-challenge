@@ -130,20 +130,20 @@ def get_username():
 def main():
     """
     Main function take the players username and setting the game enviornment
-    Each question in the game, the function manages the presentation of 
+    Each question in the game, the function manages the presentation of
     the mathematical expression, handles players input, evaluate the answer
     and time taken  for each question.
-    Scoring system allowing the player to earn score for each correct answers 
+    Scoring system allowing the player to earn score for each correct answers
     and deducted score for wrong answers.
-    Each question have 3 attempt for correct answer after that jump to 
+    Each question have 3 attempt for correct answer after that jump to
     next question
     """
-    
+
     username = get_username()
     score = 0  # initialize the player score to zero
     corrent_answer_score = 10  # correct answer score
     wrong_answer_score = -2  # wrong answer score
-       
+
     while True:
         # importing game rules from the file game_details
         print(f"\n\n{Fore.GREEN}{game_details[0]}")
@@ -162,10 +162,9 @@ def main():
             expr, answer = generate_questions()
             # Record the start time of current question
             curr_ques_start_time = time.time()
-            
             wrong_attempt = 0  # counting wrong attempt for current question
 
-            while wrong_attempt < 3 :  # allow 3 attempt for each question
+            while wrong_attempt < 3:  # allow 3 attempt for each question
                 guess = input(f"""{Fore.CYAN}
             Question #{str(i+1)} : {expr} = """)
 
@@ -175,7 +174,7 @@ def main():
                     curr_ques_end_time = current_time - curr_ques_start_time
                     print(f"""{Fore.GREEN}
             Correct! You took {curr_ques_end_time:.2f} seconds to answer.""")
-                    score+= corrent_answer_score
+                    score += corrent_answer_score
                     break
 
                 # if want to exit from the game in between type 'exit'
@@ -195,11 +194,9 @@ def main():
                 else:
                     score += wrong_answer_score
                     print(f"{Fore.RED}\n\t Wrong Answer")
-                    wrong_attempt +=1                                       
-
+                    wrong_attempt += 1
             # Pause before the next question
             time.sleep(.5)
-        
         ques_end_time = time.time()  # total question end time
         total_time = ques_end_time - ques_start_time  # Calculate elapsed time
         points = score / total_time # calculating points to get best player
@@ -208,14 +205,14 @@ def main():
               f"\tYour score is {score}\n"
               f"\tYour points is {points:.2f}\n")
         scoreboard_data(username, score, total_time, points)
-              
+
         # offer choice to the player
         print(f"\n\t{Fore.BLUE}What would you like to do next ?\n")
         print(f"\t1. Play Again\n"
               f"\t2. Scoreboard\n"
               f"\t3. Exit\n"
               f"\t4. FeedBack\n")
-        
+
         # Reset the score for the next game
         score = 0
 
@@ -255,7 +252,7 @@ def scoreboard_data(username, score, total_time, points):
     # get todays date
     date = datetime.date.today()
     current_date = date.strftime("%d/%m/%Y")
-    
+
     print(f"\t{Fore.GREEN}Updating scoreboard...\n")
     scoreboard_to_update = SHEET.worksheet("scoreboard")
     scoreboard_to_update.append_row([
@@ -267,8 +264,8 @@ def display_top_15_best_player():
     # Display top 15 best times
 
     scoreboard_worksheet = SHEET.worksheet('scoreboard').get_all_values()[1:]
-    
-    scoreboard_worksheet.sort(key=lambda x: x[4], reverse = True)
+
+    scoreboard_worksheet.sort(key=lambda x: x[4], reverse=True)
     print(f"{Fore.RED}\tUsername\tDate\t\tScore\tBest Time\tPoints")
     print(f"""{Fore.YELLOW}
        ===============================================================\n""")
