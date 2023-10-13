@@ -81,12 +81,14 @@ OPERATOR_COLORS = {
 
 min_value = 3  # minimum value
 max_value = 15  # maximum value
-total_questions = 5  # total questions to be answered
+total_questions = 10  # total questions to be answered
 
 
 def generate_questions():
-    # define 10 randomly selected questions
-    # randomly selected left side and right side value
+    """
+     define 10 randomly selected questions
+    randomly selected left side and right side value
+    """
     left = random.randint(min_value, max_value)
     right = random.randint(min_value, max_value)
     operator = random.choice(OPERATORS)  # randomly selected operators
