@@ -270,7 +270,7 @@ def display_top_15_best_time():
     # for entry in scoreboard_worksheet:
     #     entry[2] = int(entry[2])  # Convert score to integer
         # entry[3] = float(entry[3])  # Convert time to float
-    scoreboard_worksheet.sort(key=lambda x: (x[3], x[2]))
+    scoreboard_worksheet.sort(key=lambda x: (x[4]))
     print(f"{Fore.RED}\tUsername\tDate\t\tScore\tBest Time")
     print(f"""{Fore.YELLOW}
     ======================================================\n""")
