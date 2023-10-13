@@ -46,7 +46,7 @@ def typewriter_effect(text, delay=0.2, color=Fore.WHITE, bg_color=Back.BLACK):
         time.sleep(delay)
     sys.stdout.write('\n')  # Add a newline character at the end
 
-"""
+
 # Get the width of the terminal window
 terminal_width, _ = shutil.get_terminal_size()
 
@@ -56,10 +56,6 @@ spaces_to_center = (terminal_width - len("WELCOME TO MATH CHALLENGE")) // 2
 welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n"
                    + ' ' * spaces_to_center + "*" * 25)
 
-welcome_message = (' ' * spaces_to_center + "WELCOME TO MATH CHALLENGE\n\n"
-                   + ' ' * spaces_to_center + "*" * 25)
-"""
-welcome_message = "WELCOME TO MATH CHALLENGE"
 # Heading from game_details.py
 print(f"{Fore.CYAN}{Style.BRIGHT}{game_details[1]}")
 
