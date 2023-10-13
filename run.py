@@ -201,11 +201,13 @@ def main():
             # Pause before the next question
             time.sleep(.5)
 
+        points = score / total_time # calculating points to get best player
+
         ques_end_time = time.time()  # total question end time
         total_time = ques_end_time - ques_start_time  # Calculate elapsed time
         print("\n\tGame Over!")
         print(f"\tYou answered in {total_time:.2f} Seconds and your score is {score}")
-        scoreboard_data(username, score, total_time)
+        scoreboard_data(username, score, total_time, points)
 
         # offer choice to the player
         print(f"\n\t{Fore.BLUE} What would you like to do next ?\n")
