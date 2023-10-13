@@ -267,7 +267,7 @@ def display_top_15_best_player():
 
     scoreboard_worksheet = SHEET.worksheet('scoreboard').get_all_values()[1:]
     
-    scoreboard_worksheet.sort(key=lambda x: (x[4]))
+    scoreboard_worksheet.sort(key=lambda x: x[4], reverse = True)
     print(f"{Fore.RED}\tUsername\tDate\t\tScore\tBest Time\tPoints")
     print(f"""{Fore.YELLOW}
     ===============================================================\n""")
