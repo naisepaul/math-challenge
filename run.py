@@ -207,11 +207,13 @@ def main():
         total_time = ques_end_time - ques_start_time  # Calculate elapsed time
         points = score / total_time # calculating points to get best player
         print("\n\tGame Over!")
-        print(f"\tYou answered in {total_time:.2f} Seconds and your score is {score}")
+        print(f"\tYou answered in {total_time:.2f} Seconds\n"
+              f"\tYour score is {score}\n"
+              f"\tYour points is {points:.2f}\n")
         scoreboard_data(username, score, total_time, points)
               
         # offer choice to the player
-        print(f"\n\t{Fore.BLUE} What would you like to do next ?\n")
+        print(f"\n\t{Fore.BLUE}What would you like to do next ?\n")
         print(f"\t1. Play Again\n"
               f"\t2. Scoreboard\n"
               f"\t3. Exit\n"
@@ -221,7 +223,7 @@ def main():
         score = 0
 
         while True:
-            choice = input("Enter Your choice (1/2/3/4) >>> ")
+            choice = input("\tEnter Your choice (1/2/3/4) >>> ")
 
             if choice == '1':
                 typewriter_effect("\tLoading the game...", delay=0.02,
