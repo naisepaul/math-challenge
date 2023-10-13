@@ -141,7 +141,7 @@ def main():
     Each question have 3 attempt for correct answer after that jump to 
     next question
     """
-    # get_username_flag = True
+    
     username = get_username()
     score = 0  # initialize the player score to zero
     corrent_answer_score = 10  # correct answer score
@@ -272,12 +272,12 @@ def display_top_15_best_player():
     scoreboard_worksheet.sort(key=lambda x: x[4], reverse = True)
     print(f"{Fore.RED}\tUsername\tDate\t\tScore\tBest Time\tPoints")
     print(f"""{Fore.YELLOW}
-    ===============================================================\n""")
+       ===============================================================\n""")
     for index, row in enumerate(scoreboard_worksheet[:15], start=1):
         username, date, score, total_time, points = row
         print(f"""{Fore.BLUE}{index}.\t {username}\t\t{date}\t{score}\t{total_time}\t{points}""")
     print(f"""{Fore.YELLOW}
-    ===============================================================\n""")
+       ===============================================================\n""")
 
 
 if __name__ == "__main__":

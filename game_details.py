@@ -32,9 +32,12 @@ game_details = [
    |  |                                                                   |  |
    |  |  3 - Players must solve each math question as quickly as          |  |
    |  |      possible. There is no specific time limit for individual     |  |
-   |  |      questions                                                    |  |
+   |  |      questions. Only 3 chance for each question, after that it    |  |                                                                   |  |
+   |  |      jump to the next question. Each correct answer has 10 score  |  |
+   |  |      and wrong one has -2. Points will calculate by dividing      |  |
+   |  |      score by total time.                                         |  |
    |  |                                                                   |  |
-   |  |  4 - The top 10 fastest times will be saved on a leaderboard.     |  |
+   |  |  4 - The top 15 best points will be saved on a scoreboard.        |  |
    |  |___________________________________________________________________|  |
    |_________________________________________________________________________|
    """,
