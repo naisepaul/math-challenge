@@ -110,16 +110,16 @@ def get_username():
     while True:
 
         username = input(f"""\n{Fore.YELLOW}
-        Enter your username : \n        >>>""").strip().upper()
+        Enter your username (3 to 6 characters) : \n        >>>""").strip().upper()
 
-        if len(username) < 3 or ' ' in username or \
+        if len(username) < 3 or ' ' in username or len(username) > 6 or \
            not any(char.isalpha() for char in username):
             """
-            Check if the username has less than 3 characters
-            or does not contain any letters or contain space
+            Check if the username has less than 3 and not greater than
+            6 characters or does not contain any letters or contain space
             """
             print(f"""{Fore.RED}\tInvalid username. Please enter at least 3
-            characters with at least one letter without space!""")
+        and not greater than 6 characters with at least one letter without space!""")
 
         else:
             print(f"\tHello, {username}, Welcome to Math Challenge !\n")
