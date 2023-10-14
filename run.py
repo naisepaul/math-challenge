@@ -64,6 +64,8 @@ print(f"{Fore.CYAN}{Style.BRIGHT}{game_details[1]}")
 typewriter_effect(welcome_message, delay=0.03,
                   color=Fore.RED)
 
+# importing game rules from the file game_details
+print(f"\n\n{Fore.GREEN}{game_details[0]}")
 
 OPERATORS = ["+", "-", "*"]  # operators
 """
@@ -144,9 +146,7 @@ def main():
     corrent_answer_score = 10  # correct answer score
     wrong_answer_score = -2  # wrong answer score
 
-    while True:
-        # importing game rules from the file game_details
-        print(f"\n\n{Fore.GREEN}{game_details[0]}")
+    while True:        
         input(f"""\n{Fore.YELLOW}
         {username}, Press ENTER to start the game.\n    >>>""")
         # type 'exit' to quit the game
@@ -222,8 +222,6 @@ def main():
             if choice == '1':
                 typewriter_effect("\tLoading the game...", delay=0.02,
                                   color=Fore.GREEN)
-                # Set the flag to False to skip username input
-                # get_username_flag = False  # Play Again
                 break  # Break the inner loop and go back to the main loop
             elif choice == '2':
                 os.system('clear')  # clear the screen

@@ -11,7 +11,7 @@ game_details = [
    """
 
 
-   
+
     _________________________________________________________________________
    |   ___________________________________________________________________   |
    |  |                ===============================                    |  |
@@ -30,7 +30,7 @@ game_details = [
    |  |         ...and so on.                                             |  |
    |  |  3 - Players must solve each math question as quickly as          |  |
    |  |      possible. There is no specific time limit for individual     |  |
-   |  |      questions. Only 3 chance for each question, after that it    |  |                                                                   |  |
+   |  |      questions. Only 3 chance for each question, after that it    |  |
    |  |      jump to the next question. Each correct answer has 10 score  |  |
    |  |      and wrong one has -2. Points will calculate by dividing      |  |
    |  |      score by total time.                                         |  |
