@@ -10,13 +10,14 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 ![Responsive view](assets/readme-images/mock-up.jpg)
 
-## [Table of Content](#table-of-content)
+## [Table of Contents](#table-of-contents)
 
 - [Introduction](#introduction)
 - [User Experience](#user-experience)
   - [Website Owner goal](#website-owner-goal)
   - [User Goals](#user-goals)
   - [User Stories](#user-stories)
+- [Surface](#surface)
 
 
 ## User Experience
@@ -56,3 +57,9 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 - User have the option to quit the game at any time, so user can exit the game gracefully.
 
 [Back to Table of contents](#table-of-contents)
+
+## Surface
+
+- Colors
+
+    The colors in the game are supplied by the Python Colorama Model
