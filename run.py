@@ -64,9 +64,6 @@ print(f"{Fore.CYAN}{Style.BRIGHT}{game_details[1]}")
 typewriter_effect(welcome_message, delay=0.03,
                   color=Fore.RED)
 
-# importing game rules from the file game_details
-print(f"\n\n{Fore.GREEN}{game_details[0]}")
-
 OPERATORS = ["+", "-", "*"]  # operators
 """
 OPERATOR_COLORS is a dictionary mapping operators to
@@ -146,7 +143,9 @@ def main():
     corrent_answer_score = 10  # correct answer score
     wrong_answer_score = -2  # wrong answer score
 
-    while True:        
+    while True:
+        # importing game rules from the file game_details
+        print(f"\n\n{Fore.GREEN}{game_details[0]}")
         input(f"""\n{Fore.YELLOW}
         {username}, Press ENTER to start the game.\n    >>>""")
         # type 'exit' to quit the game
