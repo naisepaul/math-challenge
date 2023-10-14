@@ -9,3 +9,8 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 [You can see the live project here](https://math-challenge-8e3b27978092.herokuapp.com/)
 
 ![Responsive view](assets/readme-images/mock-up.jpg)
+
+## Table of Content
+
+- [Introduction](#introduction)
+- [User Experience]
