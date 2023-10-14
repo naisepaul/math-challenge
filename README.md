@@ -10,14 +10,49 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 ![Responsive view](assets/readme-images/mock-up.jpg)
 
-## Table of Content
+## [Table of Content](#table-of-content)
 
 - [Introduction](#introduction)
 - [User Experience](#user-experience)
+  - [Website Owner goal](#website-owner-goal)
+  - [User Goals](#user-goals)
+  - [User Stories](#user-stories)
 
 
 ## User Experience
 
 ### Website Owner goal
 
-    - As a websi
+- Entertainment and Education :
+
+    The primary goal for math challenge game is to provide entertainment and educational skills to my users. It will improve their maths skills. I want to create an enjoyable and engaging experience that keeps visitors coming back to play the game.
+
+### User Goals
+
+- Entertainment :
+
+    Solving mathematical problems in a game format can be engaging, fun and entertaining.
+
+- Skill Improvement :
+
+    Users may play the game to enhance their math skills, particularly their ability to perform quick calculations.
+
+- Mental Stimulation :
+
+    The game challenges players with math questions, requiring them to think and calculate quickly. This can provide mental stimulation and help improve math skills.
+
+### User Stories
+
+- The user wants to start the game with a simple click or command, so user can quickly begin playing.
+
+- Provide a clear and concise set of instructions at the start, so user can understand how to play.
+
+- User can enter their username so that the game can personalize their experience and save their scores.
+
+- Provide a variety of math problems that include addition, subtraction, and multiplication, so user can test different math skills.
+
+- Display the top 15 best players on the scoreboard, so user can strive to be among them.
+
+- User have the option to quit the game at any time, so user can exit the game gracefully.
+
+[Back to Table of contents](#table-of-contents)
