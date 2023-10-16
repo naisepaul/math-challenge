@@ -62,4 +62,8 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 - Colors
 
-    The colors in the game are supplied by the Python Colorama Model
+    The colors in this game are supplied by the Python Colorama Model
+
+## Logic
+
+-   [Flowcharts](assets/readme-images/flowchart.png)
