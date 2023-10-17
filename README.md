@@ -66,4 +66,14 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 ## Logic
 
--   [Flowcharts](assets/readme-images/flowchart.png)
+-   Flowcharts
+
+![responsive view](assets/readme-images/flowchart.png)
+
+
+## Game Features
+
+- Logo and welcome message
+![responsive view](assets/readme-images/heading.png)
+
+    - When the users reach the website, they will see this feature. The game logo and the intro message are displayed here.
