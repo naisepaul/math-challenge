@@ -101,7 +101,7 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 ### Game rule
 
-![responsive view](assets/readme-images/math-challenge-feature2.png)
+![responsive view](assets/readme-images/math-challenge-feature3.png)
 
 - After giving the correct username computer will display the game rules and give instruction to the player that to press a key to start the game.
 
