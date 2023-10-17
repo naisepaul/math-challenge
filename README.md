@@ -18,6 +18,12 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [User Goals](#user-goals)
   - [User Stories](#user-stories)
 - [Surface](#surface)
+- [Logic](#logic)
+  - [Flowchart](#logic)
+- [Game Features](#game-features)
+  - [Logo and Welcome message](#logo-and-welcome-message)
+  - [Asking the Username](#asking-the-username)
+
 
 
 ## User Experience
@@ -66,14 +72,28 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 ## Logic
 
--   Flowcharts
+-  Flowcharts
 
 ![responsive view](assets/readme-images/flowchart.png)
 
 
 ## Game Features
 
-- Logo and welcome message
+### Logo and welcome message
+
 ![responsive view](assets/readme-images/heading.png)
 
-    - When the users reach the website, the game logo and the intro message are displayed here.
+- When the users reach the website, the game logo and the introduction message are displayed here.
+
+### Asking the username
+
+![responsive view](assets/readme-images/math-challenge-feature1.png)
+
+- After the welcome message computer will ask to input the username.
+
+### Error in username
+
+![responsive view](assets/readme-images/math-challenge-feature2.png)
+
+- If there is any error in the username, it will display error message.
+
