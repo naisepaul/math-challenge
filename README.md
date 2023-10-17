@@ -106,3 +106,9 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 - After giving the correct username computer will display the game rules and give instruction to the player that to press a key to start the game.
 
 [Back to Table of contents](#table-of-contents)
+
+### Type 'exit' for exiting the game 
+
+![responsive view](assets/readme-images/math-challenge-feature4.png)
+
+- Type 'exit' for exiting in between the game.
