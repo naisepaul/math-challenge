@@ -23,6 +23,8 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 - [Game Features](#game-features)
   - [Logo and Welcome message](#logo-and-welcome-message)
   - [Asking the Username](#asking-the-username)
+  - [Error in username](#error-in-username)
+  - [Game rules](#game-rule)
 
 
 
@@ -97,3 +99,10 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 - If there is any error in the username, it will display error message.
 
+### Game rule
+
+![responsive view](assets/readme-images/math-challenge-feature2.png)
+
+- After giving the correct username computer will display the game rules and give instruction to the player that to press a key to start the game.
+
+[Back to Table of contents](#table-of-contents)
