@@ -25,6 +25,7 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [Asking the Username](#asking-the-username)
   - [Error in username](#error-in-username)
   - [Game rules](#game-rule)
+  - [Exit the game](#type-exit-for-exiting-the-game)
 
 
 

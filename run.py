@@ -123,7 +123,7 @@ def get_username():
                   f" one letter without space!")
 
         else:
-            print(f"\tHello, {username}, Welcome to Math Challenge !\n")
+            print(f"\t\n\nHello, {username}, Welcome to Math Challenge !\n")
             return username
 
 
@@ -234,8 +234,9 @@ def main():
                 \n\tSee you again!\n""")
                 return  # Exit the game
             elif choice == '4':
-                input("Enter your valuable Feedback >>> ")
-                print(f"""{Fore.CYAN}Thank you for the feedback {username}""")
+                input("\tEnter your valuable Feedback >>> ")
+                print(f"""{Fore.CYAN}\nThank you for the feedback {username}
+                       \n\tSee you again!\n""")
                 return   # Exit the game
             else:
                 print(f"""{Fore.RED}\n
