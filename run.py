@@ -234,7 +234,7 @@ def main():
                 \n\tSee you again!\n""")
                 return  # Exit the game
             elif choice == '4':
-                input("\tEnter your valuable Feedback >>> ")
+                input("\n\tEnter your valuable Feedback >>> ")
                 print(f"""{Fore.CYAN}\nThank you for the feedback {username}
                        \n\tSee you again!\n""")
                 return   # Exit the game
