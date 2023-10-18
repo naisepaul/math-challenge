@@ -201,9 +201,10 @@ def main():
         total_time = ques_end_time - ques_start_time  # Calculate elapsed time
         points = score / total_time  # calculating points to get best player
         print("\n\tGame Over!")
-        print(f"\tYou answered in {total_time:.2f} Seconds\n"
-              f"\tYour score is {score}\n"
-              f"\tYour points is {points:.2f}\n")
+        typewriter_effect(f"\tYou answered in {total_time:.2f} Seconds\n"
+                          f"\tYour score is {score}\n"
+                          f"\tYour points is {points:.2f}\n",
+                          delay=0.02, color=Fore.YELLOW)
         scoreboard_data(username, score, total_time, points)
 
         # offer choice to the player
