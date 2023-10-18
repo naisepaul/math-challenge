@@ -188,7 +188,7 @@ def main():
                 try:
                     guess = int(guess)
                 except ValueError:
-                    print(f"{Fore.RED}\t Invalid input. Please"
+                    print(f"{Fore.RED}\n\t Invalid input. Please"
                           f" enter an integer.")
                     continue
                 else:
