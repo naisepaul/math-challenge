@@ -31,6 +31,7 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [Menu Option](#menu-option)
   - [Scorboard](#scoreboard)
   - [FeedBack](#feedback)
+  - [End Game](#end-game)
 
 
 ## User Experience
@@ -157,3 +158,8 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 -  Player can input their feedback at the end
 
+### End Game
+
+![responsive view](assets/readme-images/mc-feature-end-game.png)
+
+- Player can type 3 for exiting from the game. Player can see this message when they choose 'exit'
