@@ -26,7 +26,7 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [Error in username](#error-in-username)
   - [Game rules](#game-rule)
   - [Exit the game](#type-exit-for-exiting-the-game)
-
+  - [Invalid input and wrong answer](#invalid-input-and-wrong-answer)
 
 
 ## User Experience
@@ -113,3 +113,9 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 ![responsive view](assets/readme-images/math-challenge-feature4.png)
 
 - Type 'exit' for exiting in between the game.
+
+### Invalid input and wrong answer 
+
+![responsive view](assets/readme-images/mc-feature-invalid-input.png)
+
+- When player typed wrong answer and invalid input these error message will shown.
