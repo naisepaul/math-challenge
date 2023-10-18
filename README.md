@@ -27,6 +27,8 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [Game rules](#game-rule)
   - [Exit the game](#type-exit-for-exiting-the-game)
   - [Invalid input and wrong answer](#invalid-input-and-wrong-answer)
+  - [Game Over](#game-over)
+  - [Menu Option](#menu-option)
 
 
 ## User Experience
@@ -125,3 +127,17 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 ![responsive view](assets/readme-images/mc-feature-game-over.png)
 
 - When game is finished it will display game over message and total time, score and points.
+
+### Menu Option
+
+![responsive view](assets/readme-images/mc-feature-menu.png)
+
+- At the end of the game players have access to the menu where they can choose from these options:
+
+    [1] - Play Again
+
+    [2] - Scoreboard
+
+    [3] - Exit
+
+    [4] - FeedBack
