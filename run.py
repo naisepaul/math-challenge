@@ -217,7 +217,8 @@ def main():
         score = 0
 
         while True:
-            choice = input("\tEnter Your choice (1/2/3/4)  {Fore.RED}>>> ")
+            choice = input(f"\tEnter Your choice (1/2/3/4)"
+                           f" {Fore.RED} >>>{Style.RESET_ALL} ")
 
             if choice == '1':
                 typewriter_effect("\tLoading the game...", delay=0.02,
@@ -234,7 +235,8 @@ def main():
                 \n\tSee you again!\n""")
                 return  # Exit the game
             elif choice == '4':
-                input("\n\tEnter your valuable Feedback {Fore.RED} >>> ")
+                input(f"\n\tEnter your valuable Feedback"
+                      f"{Fore.RED} >>>{Style.RESET_ALL} ")
                 print(f"""{Fore.CYAN}\n\tThank you for the feedback {username}
                        \n\tSee you again!\n""")
                 return   # Exit the game
