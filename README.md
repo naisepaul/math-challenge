@@ -119,3 +119,9 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 ![responsive view](assets/readme-images/mc-feature-invalid-input.png)
 
 - When player typed wrong answer and invalid input these error message will shown.
+
+### Game over
+
+![responsive view](assets/readme-images/mc-feature-game-over.png)
+
+- When game is finished it will display game over message and total time, score and points.
