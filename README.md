@@ -29,6 +29,7 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [Invalid input and wrong answer](#invalid-input-and-wrong-answer)
   - [Game Over](#game-over)
   - [Menu Option](#menu-option)
+  - [Scorboard](#scoreboard)
 
 
 ## User Experience
@@ -141,3 +142,9 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
     [3] - Exit
 
     [4] - FeedBack
+
+### Scoreboard
+
+![responsive view](assets/readme-images/mc-feature-scoreboard.png)
+
+- The Scoreboard shows the 15 players with the best Points.
