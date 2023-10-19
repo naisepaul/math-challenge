@@ -123,6 +123,7 @@ def get_username():
                   f" one letter without space!")
 
         else:
+            os.system('clear')  # clear the screen
             print(f"\t\n\nHello, {username}, Welcome to Math Challenge !\n")
             return username
 
