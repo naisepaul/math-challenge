@@ -134,7 +134,7 @@ def main():
     the mathematical expression, handles players input, evaluate the answer
     and time taken  for each question.
     Scoring system allowing the player to earn score for each correct answers
-    and deducted score for wrong answers.
+    and deducted score for wrong answers and invalid input.
     Each question have 3 attempt for correct answer after that jump to
     next question
     """
@@ -196,6 +196,7 @@ def main():
                     print(f"{Fore.RED}\n\t Invalid input. Please"
                           f" enter an integer.")
                     invalid_input_attempt += 1
+                    score += wrong_answer_score
                 else:
                     score += wrong_answer_score
                     print(f"{Fore.RED}\n\t Wrong Answer")
