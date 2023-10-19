@@ -281,7 +281,8 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 - ### Python Validation
 
-- The [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)  Service was used to validate every Python file in the project to ensure there were no syntax errors in the project.
+- The [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)  Service was used to validat
+e every Python file in the project to ensure there were no syntax errors in the project.
 
 ![responsive view](assets/test-images/mc-pep8ci-game.png)
 
@@ -290,6 +291,7 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 - No errors or warnings were found during the testing.
 
 ### Lighthouse
+- Desktop Result
 
 ![responsive view](assets/test-images/mc-lighthouse.png)
 
