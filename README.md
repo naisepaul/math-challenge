@@ -34,6 +34,7 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [FeedBack](#feedback)
   - [End Game](#end-game)
 - [How to Play](#how-to-play)
+- [Storage Data](#storage-data)
 
 
 
@@ -173,6 +174,8 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 - Player can type 3 for exiting from the game. Player can see this message when they choose 'exit'
 
+[Back to Table of contents](#table-of-contents)
+
 ## How to Play
 
 - After giving the players username and setting the game enviornment. Each question in the game, the function manages the presentation of the mathematical expression, handles players input, evaluate the answer and time taken  for each question. Scoring system allowing the player to earn score for each correct answers and deducted score for wrong answers. [Here is the game rules](#game-rule)
@@ -182,3 +185,32 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 - Each question have 3 attempt for correct answer after that jump to next question. [Jump to the next question](#jump-to-next-question-after-3-wrong-answers)
 
 - After finished all 10 questions player will get the result. [Result](#game-over)
+
+## Storage Data
+
+- I used a Google sheet to save the username, date, score,best time and points. This sheet is connected to the code through the Google Drive and Google Sheet API by the Google Cloud Platform. This method allows me to send and receive data as I had access to the Google Sheet API credentials. I also added in the Config Vars to these credentials when I was deploying the project in Heroku. As this is sensitive data, I had to add the creds.json in the Git ignore file. This would ensure that these credentials are not pushed to the repository.
+
+### Code to connect to google sheet
+
+![responsive view](assets/readme-images/mc-google-sheet.png)
+
+### Google Sheet Math Challenge scoreboard
+
+![responsive view](assets/readme-images/mc-google-scoreboard.png)
+
+[Back to Table of contents](#table-of-contents)
+
+## Technologies Used
+
+### Language used
+
+- [python](https://www.python.org/)
+
+### Python packages
+
+- [Random](https://docs.python.org/3/library/random.html) -
+- [Colorama](https://pypi.org/project/colorama/)
+- [DateTime](https://docs.python.org/3/library/datetime.html)
+- [Time](https://docs.python.org/3/library/time.html)
+- [Gspread](https://pypi.org/project/gspread/)
+- [Google.oauth2.service acoount](https://google-auth.readthedocs.io/en/stable/index.html)
