@@ -123,8 +123,7 @@ def get_username():
                   f" one letter without space!")
 
         else:
-            os.system('clear')  # clear the screen
-            print(f"\t\n\nHello, {username}, Welcome to Math Challenge !\n")
+            os.system('clear')  # clear the screen            
             return username
 
 
@@ -148,8 +147,9 @@ def main():
     while True:
         # importing game rules from the file game_details
         print(f"{Fore.GREEN}{game_details[0]}")
-        input(f"""\n{Fore.YELLOW}
-        {username}, Press ENTER to start the game.\n    >>>""")
+        print(f"\t\t {Fore.YELLOW} Hello, {username}, Welcome to Math Challenge !\n")
+        input(f"""{Fore.YELLOW}
+        {username}, Press ENTER to start the game.\n\t>>>""")
         # type 'exit' to quit the game
         print(f"{Fore.YELLOW}\tType{Fore.RED}{Style.BRIGHT} "
               f"'exit'{Style.RESET_ALL}{Fore.YELLOW} for quit the game\n")
