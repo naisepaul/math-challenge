@@ -43,6 +43,7 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
     - [pep8ci](#python-validation)
     - [LightHouse](#lighthouse)
     - [Functionality](#functionality)
+    - [Bugs](#bugs)
 
 
 ## User Experience
@@ -301,5 +302,12 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 - At the end of the game, the scoreboard is updating correctly
 
 - All the menu options are working without any fails
+
+### Bugs
+
+ - When I first built the ASCII art for the heading I got the warning "line too long (126 > 79 characters)". After that I changed the heading style to clear the bugs.
+
+ - There are lots of "line too long (126 > 79 characters)" warnings I got especially when I use colorama the code will will be too lengthy. So I used 2 - 3 lines of codes to print or exceuting.
+
 
 [Back to Table of contents](#table-of-contents)
