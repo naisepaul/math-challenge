@@ -146,9 +146,10 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 - When player typed wrong answer and invalid input these error message will shown.
 
-### Jump to next question after 3 wrong answers
+### Jump to next question after 3 wrong answers or invalid input
 
 ![responsive view](assets/readme-images/mc-feature-3-wrong-answer.png)
+![responsive view](assets/readme-images/mc-feature-3-invalid.png)
 
 - Automatically jump to the next question if player entered 3 wrong answers
 
