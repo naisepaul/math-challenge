@@ -27,11 +27,14 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [Game rules](#game-rule)
   - [Exit the game](#type-'exit'-for-exiting-the-game)
   - [Invalid input and wrong answer](#invalid-input-and-wrong-answer)  
+  - [Jump to the next question after 3 wrong answers](#jump-to-next-question-after-3-wrong-answers)
   - [Game Over](#game-over)
   - [Menu Option](#menu-option)
   - [Scorboard](#scoreboard)
   - [FeedBack](#feedback)
   - [End Game](#end-game)
+- [How to Play](#how-to-play)
+
 
 
 ## User Experience
@@ -169,3 +172,13 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 ![responsive view](assets/readme-images/mc-feature-end-game.png)
 
 - Player can type 3 for exiting from the game. Player can see this message when they choose 'exit'
+
+## How to Play
+
+- After giving the players username and setting the game enviornment. Each question in the game, the function manages the presentation of the mathematical expression, handles players input, evaluate the answer and time taken  for each question. Scoring system allowing the player to earn score for each correct answers and deducted score for wrong answers. [Here is the game rules](#game-rule)
+
+- Total 10 randomly questions will be there.
+
+- Each question have 3 attempt for correct answer after that jump to next question. [Jump to the next question](#jump-to-next-question-after-3-wrong-answers)
+
+- After finished all 10 questions player will get the result. [Result](#game-over)
