@@ -123,7 +123,7 @@ def get_username():
                   f" one letter without space!")
 
         else:
-            os.system('clear')  # clear the screen            
+            os.system('clear')  # clear the screen
             return username
 
 
@@ -147,10 +147,11 @@ def main():
     while True:
         # importing game rules from the file game_details
         print(f"\n{Fore.GREEN}{game_details[0]}")
-        print(f"\t\t {Fore.YELLOW} Hello, {username}, Welcome to Math Challenge !")
+        print(f"\t\t {Fore.YELLOW} Hello, {username},"
+              f" Welcome to Math Challenge !")
         input(f"""{Fore.YELLOW}
         {username}, Press ENTER to start the game.\n\t>>>""")
-        os.system('clear')  # clear the screen            
+        os.system('clear')  # clear the screen
         # type writer effect for loading the game
         typewriter_effect("\tLoading the game...", delay=0.02,
                           color=Fore.GREEN)
@@ -166,8 +167,9 @@ def main():
             # Record the start time of current question
             curr_ques_start_time = time.time()
             wrong_attempt = 0  # counting wrong attempt for current question
-
-            while wrong_attempt < 3:  # allow 3 attempt for each question
+            invalid_input_attempt = 0
+            # allow 3 attempt for each question
+            while wrong_attempt < 3 and invalid_input_attempt < 3:
                 guess = input(f"""{Fore.CYAN}
             Question #{str(i+1)} : {expr} = """)
 
@@ -193,7 +195,7 @@ def main():
                 except ValueError:
                     print(f"{Fore.RED}\n\t Invalid input. Please"
                           f" enter an integer.")
-                    continue
+                    invalid_input_attempt += 1
                 else:
                     score += wrong_answer_score
                     print(f"{Fore.RED}\n\t Wrong Answer")
