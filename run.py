@@ -146,8 +146,8 @@ def main():
 
     while True:
         # importing game rules from the file game_details
-        print(f"{Fore.GREEN}{game_details[0]}")
-        print(f"\t\t {Fore.YELLOW} Hello, {username}, Welcome to Math Challenge !\n")
+        print(f"\n{Fore.GREEN}{game_details[0]}")
+        print(f"\t\t {Fore.YELLOW} Hello, {username}, Welcome to Math Challenge !")
         input(f"""{Fore.YELLOW}
         {username}, Press ENTER to start the game.\n\t>>>""")
         # type 'exit' to quit the game
