@@ -26,7 +26,7 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [Error in username](#error-in-username)
   - [Game rules](#game-rule)
   - [Exit the game](#type-'exit'-for-exiting-the-game)
-  - [Invalid input and wrong answer](#invalid-input-and-wrong-answer)
+  - [Invalid input and wrong answer](#invalid-input-and-wrong-answer)  
   - [Game Over](#game-over)
   - [Menu Option](#menu-option)
   - [Scorboard](#scoreboard)
@@ -125,6 +125,12 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 ![responsive view](assets/readme-images/mc-feature-invalid-input.png)
 
 - When player typed wrong answer and invalid input these error message will shown.
+
+### Jump to next question after 3 wrong answers
+
+![responsive view](assets/readme-images/mc-feature-3-wrong-answer.png)
+
+- Automatically jump to the next question if player entered 3 wrong answers
 
 ### Game over
 
