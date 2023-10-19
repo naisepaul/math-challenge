@@ -150,12 +150,14 @@ def main():
         print(f"\t\t {Fore.YELLOW} Hello, {username}, Welcome to Math Challenge !")
         input(f"""{Fore.YELLOW}
         {username}, Press ENTER to start the game.\n\t>>>""")
-        # type 'exit' to quit the game
-        print(f"{Fore.YELLOW}\tType{Fore.RED}{Style.BRIGHT} "
-              f"'exit'{Style.RESET_ALL}{Fore.YELLOW} for quit the game\n")
+        os.system('clear')  # clear the screen            
         # type writer effect for loading the game
         typewriter_effect("\tLoading the game...", delay=0.02,
                           color=Fore.GREEN)
+        # type 'exit' to quit the game
+        print(f"\n{Fore.YELLOW}\tType{Fore.RED}{Style.BRIGHT} "
+              f"'exit'{Style.RESET_ALL}{Fore.YELLOW} for quit the game\n")
+
         # Record the start time for first question
         ques_start_time = time.time()
 
