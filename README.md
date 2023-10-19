@@ -35,6 +35,10 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
   - [End Game](#end-game)
 - [How to Play](#how-to-play)
 - [Storage Data](#storage-data)
+- [Technologies Used](#technologies-used)
+    - [Languages Used](#language-used)
+    - [Python Packages](#python-packages)
+    - [Frameworks](#frameworks---libraries---programs-used)
 
 
 
@@ -204,13 +208,55 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 ### Language used
 
-- [python](https://www.python.org/)
+- [python](https://www.python.org/) - used extensively during project.
+
+- [Markdown](https://www.markdownguide.org/) - Used exclusively for README.
+
+- HTML5 - minor use when adding additional elements to the web page.
+
+- CSS3 - minor use
+ when applying styling to app view.
 
 ### Python packages
 
-- [Random](https://docs.python.org/3/library/random.html) -
-- [Colorama](https://pypi.org/project/colorama/)
-- [DateTime](https://docs.python.org/3/library/datetime.html)
-- [Time](https://docs.python.org/3/library/time.html)
-- [Gspread](https://pypi.org/project/gspread/)
-- [Google.oauth2.service acoount](https://google-auth.readthedocs.io/en/stable/index.html)
+- [Random](https://docs.python.org/3/library/random.html) - Returns a random integer to get a random number ([randint()](https://www.digitalocean.com/community/tutorials/randint-method-in-python))
+
+- [Colorama](https://pypi.org/project/colorama/) - Allows terminal text to be printed in different colours / styles
+
+- [DateTime](https://docs.python.org/3/library/datetime.html) - Returns the full date
+
+- [Time](https://docs.python.org/3/library/time.html) - Defined time sleep
+
+- [Shutil](https://docs.python.org/3/library/shutil.html) - shutil. get_terminal_size() method tells the size of the terminal window. 
+
+- [sys](https://docs.python.org/3/library/sys.html) - sys is used to control the output behavior of the program. Used sys for typewriter effect
+
+- [os](https://docs.python.org/3/library/os.html) - Used for clear the screen 
+
+- [Gspread](https://pypi.org/project/gspread/) - Allows communication with Google Sheets
+
+- [Google.oauth2.service acoount](https://google-auth.readthedocs.io/en/stable/index.html) - credentials used to validate credentials and grant access to Google service accounts
+
+### Frameworks - Libraries - Programs Used
+
+- [Git](https://git-scm.com/)
+    - Git is a version control system used for tracking changes in computer files. It is generally used for source code management in software development.
+
+- [Github](https://github.com/)
+    - GitHub is used to store the project's code after being pushed from Git
+
+- [Heroku](https://dashboard.heroku.com/apps)
+    - Heroku was used to deploy the live project
+
+- [Lucidchart](https://lucid.app/users/login#/login)
+    - Lucidchart used to create the flowchart
+
+- [Patorjk](https://patorjk.com/)
+    - Patorjk (ASCII Art Generator) used to draw the game heading
+
+- [PEP8](https://ww1.pep8online.com/)
+    - The PEP8 was used to validate all the Python code
+
+## Testing
+
+- Tesing and validation [here](assets/test-images/TESTING.md)
