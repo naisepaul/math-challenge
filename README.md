@@ -182,6 +182,10 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 
 - Player can type 3 for exiting from the game. Player can see this message when they choose 'exit'
 
+## Unimplemented Features
+
+- playsound - I tryed to make 
+
 [Back to Table of contents](#table-of-contents)
 
 ## How to Play
