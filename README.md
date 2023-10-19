@@ -39,7 +39,10 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
     - [Languages Used](#language-used)
     - [Python Packages](#python-packages)
     - [Frameworks](#frameworks---libraries---programs-used)
-
+- [Testing](#testing)
+    - [pep8ci](#python-validation)
+    - [LightHouse](#lighthouse)
+    - [Functionality](#functionality)
 
 
 ## User Experience
@@ -257,6 +260,46 @@ Welcome to the [Math Challenge](https://math-challenge-8e3b27978092.herokuapp.co
 - [PEP8](https://ww1.pep8online.com/)
     - The PEP8 was used to validate all the Python code
 
+[Back to Table of contents](#table-of-contents)    
+
 ## Testing
 
-- Tesing and validation [here](assets/test-images/TESTING.md)
+- ### Python Validation
+
+- The [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)  Service was used to validate every Python file in the project to ensure there were no syntax errors in the project.
+
+![responsive view](assets/test-images/mc-pep8ci-game.png)
+
+![responsive view](assets/test-images/mc-pep8ci.png)
+
+- No errors or warnings were found during the testing.
+
+### Lighthouse
+
+![responsive view](assets/test-images/mc-lighthouse.png)
+
+- I run Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
+
+### Functionality
+
+- The terminal has no issues and is working properly
+
+- The typewriter starts typing at the right time and is working correctly
+
+- The input for username have the right behaviour and shows the user an alert if the input is empty or invalid
+
+- The game rules appear without any issues after the player submits the username
+
+- The option to press ENTER key to start the game is running well
+
+- User can exit the game at any stage with typing 'exit' is working properly.
+
+- Wrong message and invalid input message comes properly when player input invalid.
+
+- The game runs without any issues and as expected
+
+- At the end of the game, the scoreboard is updating correctly
+
+- All the menu options are working without any fails
+
+[Back to Table of contents](#table-of-contents)
